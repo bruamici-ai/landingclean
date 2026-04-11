@@ -1,0 +1,732 @@
+---
+const phone = "5492616545175";
+const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent("Hola Heliana, quiero consultar por Casa Avellaneda en Mendoza.")}`;
+
+const heroImage = "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4631_rmcvwh.jpg";
+
+const gallery = [
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4631_rmcvwh.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4629_ykk1dl.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4627_yhj2sl.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4591_w9tsck.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4587_aaqvhd.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4590_gmib4r.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4572_dtgh3i.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4594_yapt8a.jpg"
+];
+
+const features = [
+  "Hasta 10 huéspedes",
+  "3 habitaciones",
+  "8 camas",
+  "3.5 baños",
+  "Piscina",
+  "Parrilla",
+  "Cochera doble",
+  "5ta Sección"
+];
+
+const highlights = [
+  {
+    title: "Ubicación estratégica",
+    text: "En la 5ta Sección, cerca de Aristides, del parque y de servicios para moverse con comodidad."
+  },
+  {
+    title: "Patio con piscina",
+    text: "Un exterior agradable para bajar el ritmo, refrescarse y disfrutar la casa en grupo."
+  },
+  {
+    title: "Parrilla para compartir",
+    text: "Una casa pensada para comidas largas, sobremesas y estadías familiares con aire mendocino."
+  },
+  {
+    title: "Comodidad real",
+    text: "Ambientes amplios, varios baños y cochera doble para una experiencia práctica desde que llegás."
+  }
+];
+
+const reviews = [
+  {
+    quote: "Hermosa casa amplia, cómoda y en muy buena ubicación.",
+    author: "Karla"
+  },
+  {
+    quote: "La distribución, la amplitud, la cantidad de baños y la limpieza hacen una estadía excelente.",
+    author: "Laura"
+  },
+  {
+    quote: "Ideal para grupos, súper bien ubicada y muy cómoda para disfrutar Mendoza.",
+    author: "Christian"
+  }
+];
+---
+
+<head>
+  <title>Casa Avellaneda | Mendoza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Casa Avellaneda en Mendoza. Una casa cálida y familiar con piscina, parrilla, cochera doble y excelente ubicación."
+  />
+  <meta property="og:title" content="Casa Avellaneda | Mendoza" />
+  <meta
+    property="og:description"
+    content="Casa cálida y familiar en Mendoza con piscina, parrilla, cochera doble y excelente ubicación."
+  />
+  <meta property="og:image" content={heroImage} />
+  <meta property="og:type" content="website" />
+</head>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">
+      <strong>Casa Avellaneda</strong>
+      <span>Mendoza · 5ta Sección</span>
+    </div>
+
+    <div class="top-actions">
+      <a class="btn btn-secondary" href="#galeria">Ver fotos</a>
+      <a class="btn btn-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <img src={heroImage} alt="Casa Avellaneda exterior" loading="eager" />
+        <div class="hero-overlay">
+          <div class="eyebrow">Casa cálida y familiar en Mendoza</div>
+          <h1>Espacio, calma y una ubicación que simplifica todo.</h1>
+          <p>
+            Casa Avellaneda está pensada para grupos y familias que quieren disfrutar Mendoza con comodidad,
+            patio, piscina, parrilla y cochera doble en una zona muy buscada de la ciudad.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+            <a class="btn btn-secondary" href="#galeria">Ver fotos</a>
+          </div>
+
+          <div class="pillbar">
+            {features.map((item) => <span class="pill">{item}</span>)}
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side-grid">
+        <div class="hero-side">
+          <img src={gallery[1]} alt="Casa Avellaneda patio" loading="lazy" />
+        </div>
+
+        <div class="mini-card">
+          <strong>Ideal para compartir</strong>
+          <span>Ambientes amplios, varios baños y un patio agradable para sostener una estadía cómoda y relajada.</span>
+        </div>
+
+        <div class="mini-card">
+          <strong>Una base muy bien ubicada</strong>
+          <span>Cerca de Aristides, del parque y de comercios para moverse con libertad y resolver todo fácil.</span>
+        </div>
+
+        <div class="hero-side">
+          <img src={gallery[2]} alt="Casa Avellaneda jardín" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="card">
+        <h2>Una casa práctica, cálida y con aire mendocino.</h2>
+        <p>
+          En la 5ta Sección de Mendoza, Casa Avellaneda combina lo mejor de una ubicación estratégica con una experiencia de casa real: cómoda, familiar y preparada para recibir grupos con una dinámica simple. Llegar, instalarse y disfrutar.
+        </p>
+
+        <div class="pillbar">
+          <span class="pill">Cerca de Aristides</span>
+          <span class="pill">Cerca del parque</span>
+          <span class="pill">Ideal para grupos</span>
+          <span class="pill">Cochera doble</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="stats">
+          {features.map((item) => <div class="stat">{item}</div>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Lo mejor de Casa Avellaneda</h2>
+      <p class="section-copy">
+        Una propuesta directa: buena ubicación, patio con piscina, parrilla y la comodidad necesaria para una estadía familiar o en grupo.
+      </p>
+
+      <div class="highlights">
+        {highlights.map((item) => (
+          <article class="highlight">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="section">
+    <div class="container">
+      <h2 class="section-title">Recorrido fotográfico</h2>
+      <p class="section-copy">
+        Exterior, áreas comunes, habitaciones y detalles para ver la casa con una lectura más completa.
+      </p>
+
+      <div class="gallery-grid">
+        {gallery.slice(0, 6).map((img, index) => (
+          <a class="gallery-item" href={img} target="_blank" rel="noopener noreferrer" aria-label={`Ver foto ${index + 1}`}>
+            <img src={img} alt={`Casa Avellaneda foto ${index + 1}`} loading={index === 0 ? "eager" : "lazy"} />
+          </a>
+        ))}
+      </div>
+
+      <div class="pillbar">
+        <a class="btn btn-secondary" href={gallery[0]} target="_blank" rel="noopener noreferrer">Abrir fotos</a>
+        <a class="btn btn-earth" href={whatsappUrl} target="_blank" rel="noopener noreferrer">Consultar esta casa</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Comentarios que resumen bien la experiencia</h2>
+      <p class="section-copy">
+        Los puntos que más se repiten: amplitud, ubicación y comodidad para grupos y familias.
+      </p>
+
+      <div class="review-grid">
+        {reviews.map((review) => (
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>“{review.quote}”</p>
+            <strong>{review.author}</strong>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container location-wrap">
+      <div class="card">
+        <h2>Una ubicación que hace más fácil el viaje</h2>
+        <p>
+          Nicolás Avellaneda, entre Belgrano y Tiburcio Benegas. Una zona cómoda para estar cerca del movimiento de Mendoza, pero manteniendo un clima residencial agradable.
+        </p>
+
+        <div class="checklist">
+          <div>✔ Cerca de Aristides y su oferta gastronómica</div>
+          <div>✔ Próxima al Parque General San Martín</div>
+          <div>✔ Supermercados y servicios alrededor</div>
+          <div>✔ Muy buena base para recorrer Mendoza</div>
+        </div>
+      </div>
+
+      <div class="location-box">
+        <h2 class="location-title">Casa Avellaneda</h2>
+        <p>
+          Mendoza · 5ta Sección<br />
+          Nicolás Avellaneda entre Belgrano y Tiburcio Benegas
+        </p>
+
+        <div class="pillbar">
+          <span class="pill">Zona residencial</span>
+          <span class="pill">Buena conectividad</span>
+          <span class="pill">Ideal para grupos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>¿Querés consultar por Casa Avellaneda?</h2>
+        <p>
+          Escribile directo a Heliana por WhatsApp para consultar disponibilidad, resolver dudas o pedir más fotos.
+        </p>
+
+        <div class="cta-actions">
+          <a class="btn btn-light" href={whatsappUrl} target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+          <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    Casa Avellaneda · Mendoza · Contacto directo con Heliana
+  </div>
+</footer>
+
+<style>
+  :root {
+    --bg: #f5f1e8;
+    --surface: #ffffff;
+    --text: #1e231d;
+    --muted: #66705f;
+    --line: rgba(30, 35, 29, 0.10);
+    --olive: #6d7552;
+    --olive-dark: #4d573d;
+    --earth: #9a7454;
+    --earth-dark: #7b5a41;
+    --shadow: 0 16px 42px rgba(35, 29, 22, 0.10);
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --max: 1220px;
+  }
+
+  * { box-sizing: border-box; }
+  :global(html) { scroll-behavior: smooth; }
+  :global(body) {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(109,117,82,.10), transparent 22%),
+      radial-gradient(circle at top right, rgba(154,116,84,.08), transparent 24%),
+      linear-gradient(180deg, #fbf8f2 0%, var(--bg) 100%);
+  }
+
+  a { text-decoration: none; color: inherit; }
+  img { display: block; width: 100%; }
+
+  .container {
+    width: min(calc(100% - 32px), var(--max));
+    margin: 0 auto;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(250,247,240,.82);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topbar-inner {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .brand strong {
+    font-size: 18px;
+    letter-spacing: -.02em;
+  }
+
+  .brand span {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .top-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: .2s ease;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--olive) 0%, var(--olive-dark) 100%);
+    color: white;
+    box-shadow: 0 10px 22px rgba(77,87,61,.22);
+  }
+
+  .btn-secondary {
+    background: white;
+    border-color: var(--line);
+    color: var(--text);
+  }
+
+  .btn-earth {
+    background: linear-gradient(135deg, var(--earth) 0%, var(--earth-dark) 100%);
+    color: white;
+    box-shadow: 0 10px 22px rgba(123,90,65,.22);
+  }
+
+  .btn-light {
+    background: white;
+    color: var(--olive-dark);
+  }
+
+  .btn-ghost {
+    background: rgba(255,255,255,.08);
+    color: white;
+    border-color: rgba(255,255,255,.22);
+  }
+
+  .hero {
+    padding: 22px 0 12px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 18px;
+  }
+
+  .hero-main,
+  .hero-side {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    min-height: 340px;
+    background: #ddd;
+  }
+
+  .hero-main img,
+  .hero-side img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 28px;
+    background: linear-gradient(180deg, transparent 0%, rgba(20,22,18,.72) 100%);
+    color: white;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.18);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .hero h1 {
+    margin: 14px 0 10px;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: .95;
+    letter-spacing: -.05em;
+    max-width: 11ch;
+  }
+
+  .hero p {
+    margin: 0;
+    color: rgba(255,255,255,.92);
+    line-height: 1.65;
+    max-width: 58ch;
+  }
+
+  .hero-cta,
+  .pillbar,
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-cta,
+  .pillbar { margin-top: 18px; }
+
+  .hero-side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .mini-card,
+  .card,
+  .highlight,
+  .review,
+  .location-box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .mini-card,
+  .card,
+  .location-box {
+    border-radius: var(--radius-xl);
+    padding: 22px;
+  }
+
+  .mini-card strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .mini-card span,
+  .card p,
+  .section-copy,
+  .highlight p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .section {
+    padding: 28px 0;
+  }
+
+  .split,
+  .location-wrap {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 20px;
+  }
+
+  .card h2,
+  .section-title,
+  .cta-box h2 {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1;
+    letter-spacing: -.04em;
+  }
+
+  .section-copy {
+    max-width: 64ch;
+    margin-bottom: 22px;
+  }
+
+  .pill {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(109,117,82,.10);
+    color: var(--olive-dark);
+    border: 1px solid rgba(109,117,82,.12);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+  }
+
+  .stat {
+    padding: 15px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: linear-gradient(180deg, #fff 0%, #faf7f0 100%);
+    font-weight: 700;
+    color: var(--olive-dark);
+  }
+
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+  }
+
+  .highlight,
+  .review {
+    border-radius: var(--radius-lg);
+    padding: 22px;
+  }
+
+  .highlight h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 12px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    min-height: 180px;
+    background: #ddd;
+  }
+
+  .gallery-item img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.03);
+  }
+
+  .gallery-item:nth-child(1) { grid-column: span 6; grid-row: span 2; min-height: 390px; }
+  .gallery-item:nth-child(2) { grid-column: span 3; }
+  .gallery-item:nth-child(3) { grid-column: span 3; }
+  .gallery-item:nth-child(4) { grid-column: span 3; }
+  .gallery-item:nth-child(5) { grid-column: span 3; }
+  .gallery-item:nth-child(6) { grid-column: span 6; }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+  }
+
+  .stars {
+    color: var(--earth);
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .review p {
+    margin: 12px 0 14px;
+    line-height: 1.7;
+  }
+
+  .review strong {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .checklist div {
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(30,35,29,.08);
+    font-weight: 600;
+  }
+
+  .location-title {
+    font-size: 32px;
+    margin: 0 0 10px;
+  }
+
+  .cta-section {
+    padding: 8px 0 56px;
+  }
+
+  .cta-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 32px;
+    padding: 34px;
+    background: linear-gradient(135deg, var(--olive-dark) 0%, var(--earth-dark) 100%);
+    color: white;
+    box-shadow: 0 24px 60px rgba(77,87,61,.24);
+  }
+
+  .cta-box::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    right: -90px;
+    top: -110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.12) 0%, transparent 70%);
+  }
+
+  .cta-box p {
+    margin: 0;
+    max-width: 60ch;
+    color: rgba(255,255,255,.92);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-actions,
+  .cta-box h2 {
+    position: relative;
+    z-index: 1;
+  }
+
+  footer {
+    padding: 10px 0 42px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  @media (max-width: 1080px) {
+    .hero-grid,
+    .split,
+    .location-wrap,
+    .highlights,
+    .review-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-side-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .top-actions { display: none; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-side-grid { display: none; }
+    .hero-main { min-height: 76vh; }
+    .hero-overlay { padding: 20px; }
+    .hero h1 { max-width: 100%; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+
+    .gallery-item,
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5),
+    .gallery-item:nth-child(6) {
+      grid-column: auto;
+      grid-row: auto;
+      min-height: 150px;
+    }
+
+    .card,
+    .mini-card,
+    .highlight,
+    .review,
+    .location-box,
+    .cta-box {
+      padding: 20px;
+    }
+  }
+</style>
