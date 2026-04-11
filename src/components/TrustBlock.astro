@@ -1,0 +1,178 @@
+---
+const trustTags = [
+  "Favorito entre huéspedes",
+  "Top 10% mejor valoradas",
+  "Ubicación 5,0",
+  "76 reseñas reales"
+];
+---
+
+<section class="trust-block" id="confianza">
+  <div class="container">
+    <div class="trust-shell">
+      <div class="trust-main">
+        <div class="trust-score-wrap">
+          <span class="trust-laurel">✦</span>
+          <div class="trust-score">4,95</div>
+          <span class="trust-laurel">✦</span>
+        </div>
+
+        <p class="trust-kicker">Valoración destacada</p>
+        <h2>Una casa elegida una y otra vez por su ubicación, comodidad y atención.</h2>
+        <p class="trust-copy">
+          Quienes ya se hospedaron destacan la experiencia completa: frente al parque, espacios amplios,
+          exterior disfrutable y una atención que transmite confianza desde el primer contacto.
+        </p>
+      </div>
+
+      <div class="trust-side">
+        <div class="trust-grid">
+          <article class="trust-metric">
+            <strong>4,95</strong>
+            <span>calificación promedio</span>
+          </article>
+
+          <article class="trust-metric">
+            <strong>76</strong>
+            <span>reseñas verificadas</span>
+          </article>
+
+          <article class="trust-metric">
+            <strong>5,0</strong>
+            <span>ubicación</span>
+          </article>
+
+          <article class="trust-metric">
+            <strong>4,9</strong>
+            <span>comunicación</span>
+          </article>
+        </div>
+
+        <div class="trust-tags">
+          {trustTags.map((tag) => <span>{tag}</span>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-block {
+    padding: 1.25rem 0 0;
+  }
+
+  .trust-shell {
+    display: grid;
+    gap: 1rem;
+    background:
+      radial-gradient(circle at top left, rgba(124, 31, 63, .10), transparent 38%),
+      linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.62));
+    border: 1px solid rgba(80, 40, 50, .08);
+    border-radius: 28px;
+    padding: 1rem;
+    box-shadow: 0 20px 45px rgba(30, 20, 25, .06);
+  }
+
+  .trust-main h2 {
+    margin: .35rem 0 .55rem;
+    font-size: clamp(1.8rem, 5vw, 3.1rem);
+    line-height: .95;
+    letter-spacing: -0.03em;
+  }
+
+  .trust-score-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    margin-bottom: .5rem;
+  }
+
+  .trust-score {
+    font-size: clamp(2.7rem, 8vw, 5rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    color: #2b1b21;
+  }
+
+  .trust-laurel {
+    font-size: 1.35rem;
+    color: #a67c2e;
+    opacity: .95;
+  }
+
+  .trust-kicker {
+    margin: 0;
+    font-size: .76rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #7a5a63;
+    font-weight: 700;
+  }
+
+  .trust-copy {
+    margin: 0;
+    max-width: 58ch;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #5f5258;
+  }
+
+  .trust-side {
+    display: grid;
+    gap: .85rem;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .75rem;
+  }
+
+  .trust-metric {
+    padding: .95rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,.78);
+    border: 1px solid rgba(80, 40, 50, .08);
+  }
+
+  .trust-metric strong {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #2b1b21;
+  }
+
+  .trust-metric span {
+    display: block;
+    margin-top: .35rem;
+    font-size: .92rem;
+    line-height: 1.35;
+    color: #6a5d63;
+  }
+
+  .trust-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+  }
+
+  .trust-tags span {
+    padding: .62rem .82rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid rgba(80, 40, 50, .08);
+    font-size: .86rem;
+    line-height: 1;
+    color: #5c4b52;
+  }
+
+  @media (min-width: 900px) {
+    .trust-shell {
+      grid-template-columns: 1.2fr .9fr;
+      align-items: center;
+      padding: 1.35rem;
+    }
+  }
+</style>
