@@ -1,0 +1,61 @@
+---
+const {
+  title = 'La Casa Frente al Parque | Mendoza',
+  description = 'Casa premium frente al Parque San Martín en Mendoza. Hasta 14 huéspedes, pileta, jacuzzi, patio, parrilla y ubicación privilegiada.',
+  image = 'https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873954/BRU_1444_dywtrx.jpg',
+  url = 'https://casafrentealparque.pages.dev/'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#6d2f46" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={url} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={image} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "La Casa Frente al Parque",
+      "description": description,
+      "image": [image],
+      "telephone": "+5492616931948",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mendoza Capital",
+        "addressRegion": "Mendoza",
+        "addressCountry": "AR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.95",
+        "reviewCount": "76"
+      }
+    })}></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
