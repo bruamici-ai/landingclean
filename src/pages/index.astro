@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
 
 const phone = '5492616931948';
 const wa = `https://wa.me/${phone}?text=Hola%20Bruno,%20quiero%20consultar%20por%20La%20Casa%20Frente%20al%20Parque`;
@@ -23,7 +24,7 @@ const highlights = [
   {
     icon: '💦',
     title: 'Pileta, jacuzzi y patio privado',
-    text: 'Uno de los diferenciales más fuertes de la casa, ideal para convertir una estadía en una experiencia más completa.'
+    text: 'Uno de los diferenciales más fuertes de la casa, ideal para transformar una estadía en una experiencia más completa.'
   },
   {
     icon: '👨‍👩‍👧‍👦',
@@ -32,8 +33,8 @@ const highlights = [
   },
   {
     icon: '✨',
-    title: 'Atención anfitriona muy valorada',
-    text: 'Las reseñas repiten lo mismo: buena predisposición, respuestas rápidas y sensación de hospitalidad real.'
+    title: 'Hospitalidad muy bien valorada',
+    text: 'Las reseñas destacan atención cercana, respuestas rápidas y una experiencia cálida desde la llegada.'
   }
 ];
 
@@ -54,7 +55,7 @@ const useCases = [
 
 const amenities = [
   ['Pileta privada', 'Disponible según temporada, dentro de un patio pensado para disfrutar el exterior.'],
-  ['Jacuzzi privado', 'Disponible todo el año, suma mucho a la percepción de confort.'],
+  ['Jacuzzi privado', 'Disponible todo el año y muy valorado por quienes buscan una experiencia más confortable.'],
   ['Wifi 96 Mbps', 'Verificado, útil para videollamadas, trabajo remoto y streaming.'],
   ['Estacionamiento', 'Hasta 3 plazas dentro de la propiedad, más opciones en la calle.'],
   ['TV + home theater', 'Televisor HD de 55” con Netflix y sistema Sony con bluetooth.'],
@@ -64,7 +65,7 @@ const amenities = [
   ['Pet friendly', 'Se permiten mascotas, algo muy valioso para cierto perfil de huésped.'],
   ['Zona de trabajo', 'Útil para estadías largas o viajes que mezclan descanso y trabajo.'],
   ['Cuna incluida', 'Muy buena ventaja para familias.'],
-  ['Vistas y entorno', 'Vista al parque, patio y un sector muy bien percibido de la ciudad.']
+  ['Entorno y vistas', 'Vista al parque, patio y un sector muy bien percibido de la ciudad.']
 ];
 
 const reviews = [
@@ -85,8 +86,8 @@ const reviews = [
     author: 'Juan · noviembre 2025'
   }
 ];
-import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
 ---
+
 <BaseLayout
   title="La Casa Frente al Parque | Mendoza"
   description="Casa premium frente al Parque San Martín en Mendoza. Hasta 14 huéspedes, pileta, jacuzzi, patio, parrilla y ubicación privilegiada."
@@ -127,8 +128,8 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
             <div class="eyebrow">Top 10% · Favorito entre huéspedes · 4,95/5</div>
             <h1>Una casa con presencia, color y alma mendocina frente al parque.</h1>
             <p class="hero-sub">
-              Amplia, cálida y pensada para grupos y familias que quieren una experiencia más especial en Mendoza,
-              con pileta, jacuzzi, parrilla y una ubicación de las más buscadas de la ciudad.
+              Amplia, cálida y pensada para grupos y familias que buscan una experiencia especial en Mendoza,
+              con pileta, jacuzzi, parrilla y una de las ubicaciones más buscadas de la ciudad.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href={wa} target="_blank" rel="noreferrer">Consultar disponibilidad</a>
@@ -147,7 +148,7 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
             <div class="side-label">Exterior disfrutable</div>
           </div>
           <div class="side-card tall">
-            <img src={gallery[3]} alt="Living o interior amplio" loading="lazy" />
+            <img src={gallery[3]} alt="Interior amplio" loading="lazy" />
             <div class="side-label">Interiores amplios</div>
           </div>
         </div>
@@ -167,9 +168,11 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
     <section id="experiencia">
       <div class="container">
         <div class="section-head">
-    <p>Frente al Parque General San Martín, esta casa combina amplitud, calidez y una ubicación privilegiada para disfrutar Mendoza con comodidad.</p>
-          <div><h2>Una experiencia que vende sola cuando está bien presentada</h2></div>
+          <div>
+            <h2>Una experiencia que se entiende apenas la ves</h2>
+          </div>
           <p>
+            Frente al Parque General San Martín, esta casa combina amplitud, calidez y una ubicación privilegiada para disfrutar Mendoza con comodidad.
           </p>
         </div>
 
@@ -177,11 +180,10 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
           <div class="panel">
             <div class="kicker">La experiencia</div>
             <p class="lead">
-              Frente al Parque General San Martín, esta casa combina una identidad visual fuerte con una experiencia muy sólida:
-              ambientes grandes, buena luz, patio con pileta, jacuzzi y una ubicación que se repite en las reseñas como uno de sus mayores diferenciales.
+              Esta casa transmite una sensación difícil de lograr en una publicación: espacios reales, carácter propio y un exterior que suma mucho valor a la estadía.
             </p>
             <p class="lead">
-              Es ideal para quienes no quieren un alojamiento genérico. Acá hay sensación de casa real, de encuentro, de descanso y de vivir Mendoza con más comodidad.
+              Es ideal para quienes buscan reunirse, descansar y vivir Mendoza con más comodidad, sin resignar ubicación, amplitud ni personalidad.
             </p>
             <div class="badges">
               <span class="badge">Frente al parque</span>
@@ -210,8 +212,9 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
     <section id="galeria">
       <div class="container">
         <div class="section-head">
-    <p>Frente al Parque General San Martín, esta casa combina amplitud, calidez y una ubicación privilegiada para disfrutar Mendoza con comodidad.</p>
-          <div><h2>Galería curada con las fotos reales</h2></div>
+          <div>
+            <h2>Galería curada con las fotos reales</h2>
+          </div>
           <p>
             Una selección de imágenes reales para mostrar los espacios más valorados por quienes se hospedan.
           </p>
@@ -229,14 +232,17 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
             <a class="js-lightbox" href={gallery[4]}><img src={gallery[4]} alt="Imagen 4" loading="lazy" /></a>
           </div>
         </div>
+
+        <MobileGalleryOverlay />
       </div>
     </section>
 
     <section>
       <div class="container">
         <div class="section-head">
-    <p>Frente al Parque General San Martín, esta casa combina amplitud, calidez y una ubicación privilegiada para disfrutar Mendoza con comodidad.</p>
-          <div><h2>Ideal para este tipo de viaje</h2></div>
+          <div>
+            <h2>Ideal para este tipo de viaje</h2>
+          </div>
           <p>
             Espacios pensados para familias, grupos y estadías cómodas en Mendoza.
           </p>
@@ -256,10 +262,11 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
     <section id="servicios">
       <div class="container">
         <div class="section-head">
-    <p>Frente al Parque General San Martín, esta casa combina amplitud, calidez y una ubicación privilegiada para disfrutar Mendoza con comodidad.</p>
-          <div><h2>Servicios que realmente ayudan a convertir</h2></div>
+          <div>
+            <h2>Servicios que realmente suman valor</h2>
+          </div>
           <p>
-            Servicios destacados para una estadía cómoda, práctica y disfrutable.
+            Una selección clara de los servicios que más influyen en la decisión de reserva.
           </p>
         </div>
 
@@ -277,10 +284,11 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
     <section id="opiniones">
       <div class="container">
         <div class="section-head">
-    <p>Frente al Parque General San Martín, esta casa combina amplitud, calidez y una ubicación privilegiada para disfrutar Mendoza con comodidad.</p>
-          <div><h2>Opiniones de huéspedes</h2></div>
+          <div>
+            <h2>Opiniones de huéspedes</h2>
+          </div>
           <p>
-            Opiniones reales de huéspedes que destacan ubicación, comodidad y atención.
+            Reseñas reales que repiten los mismos puntos fuertes: ubicación, comodidad y atención.
           </p>
         </div>
 
@@ -312,7 +320,7 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
         <div class="cta-box">
           <h2>Consultá fechas y resolvé todo directo por WhatsApp.</h2>
           <p>
-            Si buscás una casa con color, personalidad, espacios amplios y una ubicación premium en Mendoza,
+            Si buscás una casa con personalidad, espacios amplios y una ubicación premium en Mendoza,
             esta propiedad tiene argumentos muy fuertes para convencer.
           </p>
           <div class="cta-actions">
@@ -322,9 +330,7 @@ import MobileGalleryOverlay from "../components/MobileGalleryOverlay.astro";
         </div>
       </div>
     </section>
-  
-  <MobileGalleryOverlay />
-</main>
+  </main>
 
   <footer class="footer">
     <div class="container">
