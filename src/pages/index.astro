@@ -1,175 +1,277 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
 const houses = [
   {
     title: "La Casa Frente al Parque",
-    subtitle: "Mendoza · frente al parque",
+    subtitle: "Mendoza · frente al Parque San Martín",
+    badge: "4,95 · 76 reseñas",
     image: "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873954/BRU_1444_dywtrx.jpg",
     href: "/la-casa-frente-al-parque",
-    description: "Una casa amplia y luminosa para grupos grandes, con patio, piscina, jacuzzi y una ubicación privilegiada frente al parque."
+    description: "Una casa con presencia, luz y espacios para que el viaje se sienta más pausado, más compartido y más disfrutable.",
+    features: ["Hasta 14 huéspedes", "4 dormitorios", "12 camas", "2.5 baños", "Pileta + jacuzzi"],
+    cta: "Descubrir la experiencia"
   },
   {
     title: "Casa Avellaneda",
     subtitle: "Mendoza · 5ta Sección",
+    badge: "5.0 · Muy satisfechos",
     image: "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4631_rmcvwh.jpg",
     href: "/casa-avellaneda",
-    description: "Una casa cálida y familiar con piscina, parrilla, cochera doble y una base ideal para disfrutar la ciudad."
+    description: "Una casa cálida y bien resuelta para disfrutar Mendoza con comodidad real, patio con piscina y una dinámica simple desde que llegás.",
+    features: ["Hasta 10 huéspedes", "3 dormitorios", "8 camas", "3.5 baños", "Cochera doble"],
+    cta: "Explorar cómo se vive"
   }
 ];
 ---
 
-<head>
-  <title>Casas en Mendoza</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Casas de alquiler temporario en Mendoza." />
-</head>
+<BaseLayout
+  title="Casas en Mendoza | Alquiler temporario"
+  description="Dos casas de alquiler temporario en Mendoza. Una frente al Parque San Martín y otra en la 5ta Sección. Ideales para familias y grupos."
+>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <strong>Experiencia Mendoza</strong>
+        <span>Casas para vivir la ciudad con otro ritmo</span>
+      </div>
+    </div>
+  </header>
 
-<main class="page">
-  <section class="hero">
+  <main class="page">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Casas en Mendoza</p>
+        <h1>Dos experiencias distintas. La misma idea de viajar mejor.</h1>
+        <p class="lead">
+          No se trata solo de elegir una casa, sino de elegir cómo querés vivir Mendoza:
+          frente al parque, con más pausa y aire; o en 5ta Sección, con una comodidad simple y una ubicación que hace todo más fácil.
+        </p>
+      </div>
+    </section>
+
+    <section class="houses">
+      <div class="container grid">
+        {houses.map((house) => (
+          <article class="card">
+            <a href={house.href} class="image-wrap">
+              <img src={house.image} alt={house.title} loading="lazy" />
+              <div class="image-badge">{house.badge}</div>
+            </a>
+
+            <div class="content">
+              <p class="subtitle">{house.subtitle}</p>
+              <h2>{house.title}</h2>
+              <p class="description">{house.description}</p>
+
+              <div class="features">
+                {house.features.map((f) => <span class="feature-pill">{f}</span>)}
+              </div>
+
+              <a href={house.href} class="btn">{house.cta} →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <p class="eyebrow">Alquiler temporario en Mendoza</p>
-      <h1>Dos casas con identidad propia, pensadas para disfrutar la ciudad con comodidad.</h1>
-      <p class="lead">
-        Elegí la casa que mejor se adapte a tu viaje: una experiencia más amplia y premium frente al parque, o una opción cálida y familiar en 5ta Sección.
-      </p>
+      Mendoza, Argentina · Casas de alquiler temporario
     </div>
-  </section>
-
-  <section class="houses">
-    <div class="container grid">
-      {houses.map((house) => (
-        <article class="card">
-          <a href={house.href} class="image-wrap">
-            <img src={house.image} alt={house.title} loading="lazy" />
-          </a>
-
-          <div class="content">
-            <p class="subtitle">{house.subtitle}</p>
-            <h2>{house.title}</h2>
-            <p class="description">{house.description}</p>
-            <a href={house.href} class="btn">Ver casa</a>
-          </div>
-        </article>
-      ))}
-    </div>
-  </section>
-</main>
+  </footer>
+</BaseLayout>
 
 <style>
-  :global(body){
-    margin:0;
-    font-family: Inter, system-ui, sans-serif;
-    background:#f7f3ec;
-    color:#1f231d;
+  .page {
+    min-height: 100vh;
   }
 
-  .page{
-    min-height:100vh;
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(250, 247, 240, 0.82);
+    border-bottom: 1px solid var(--line);
   }
 
-  .container{
-    width:min(calc(100% - 32px), 1200px);
-    margin:0 auto;
+  .topbar-inner {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
   }
 
-  .hero{
-    padding:64px 0 28px;
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
-  .eyebrow{
-    margin:0 0 12px;
-    color:#6d7552;
-    font-weight:700;
-    letter-spacing:.02em;
-    text-transform:uppercase;
-    font-size:12px;
+  .brand strong {
+    font-size: 18px;
+    letter-spacing: -0.02em;
   }
 
-  h1{
-    margin:0;
-    max-width:12ch;
-    font-size:clamp(36px, 6vw, 72px);
-    line-height:.95;
-    letter-spacing:-.05em;
+  .brand span {
+    font-size: 13px;
+    color: var(--muted);
   }
 
-  .lead{
-    margin:18px 0 0;
-    max-width:70ch;
-    color:#66705f;
-    line-height:1.75;
-    font-size:17px;
+  .hero {
+    padding: 64px 0 28px;
   }
 
-  .houses{
-    padding:12px 0 56px;
+  .eyebrow {
+    margin: 0 0 12px;
+    color: var(--olive);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 12px;
   }
 
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:22px;
+  h1 {
+    margin: 0;
+    max-width: 14ch;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
   }
 
-  .card{
-    background:#fff;
-    border:1px solid rgba(31,35,29,.08);
-    border-radius:28px;
-    overflow:hidden;
-    box-shadow:0 16px 42px rgba(35,29,22,.08);
+  .lead {
+    margin: 18px 0 0;
+    max-width: 70ch;
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 17px;
   }
 
-  .image-wrap{
-    display:block;
+  .houses {
+    padding: 16px 0 64px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 24px 56px rgba(35, 29, 22, 0.14);
+  }
+
+  .image-wrap {
+    display: block;
+    position: relative;
     aspect-ratio: 16 / 10;
-    overflow:hidden;
+    overflow: hidden;
   }
 
-  .image-wrap img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+  .image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
   }
 
-  .content{
-    padding:22px;
+  .card:hover .image-wrap img {
+    transform: scale(1.03);
   }
 
-  .subtitle{
-    margin:0 0 8px;
-    color:#6d7552;
-    font-weight:700;
-    font-size:13px;
+  .image-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.5);
   }
 
-  h2{
-    margin:0 0 10px;
-    font-size:32px;
-    line-height:1;
-    letter-spacing:-.03em;
+  .content {
+    padding: 24px;
   }
 
-  .description{
-    margin:0 0 18px;
-    color:#66705f;
-    line-height:1.75;
+  .subtitle {
+    margin: 0 0 8px;
+    color: var(--olive);
+    font-weight: 700;
+    font-size: 13px;
   }
 
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:13px 18px;
-    border-radius:999px;
-    background:linear-gradient(135deg,#6d7552 0%, #4d573d 100%);
-    color:#fff;
-    text-decoration:none;
-    font-weight:700;
+  h2 {
+    margin: 0 0 10px;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1;
+    letter-spacing: -0.03em;
   }
 
-  @media (max-width: 900px){
-    .grid{
-      grid-template-columns:1fr;
+  .description {
+    margin: 0 0 16px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .feature-pill {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(109, 117, 82, 0.08);
+    color: var(--olive-dark);
+    border: 1px solid rgba(109, 117, 82, 0.12);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 20px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--olive) 0%, var(--olive-dark) 100%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .footer {
+    padding: 10px 0 42px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
