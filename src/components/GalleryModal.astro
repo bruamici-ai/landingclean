@@ -1,0 +1,556 @@
+---
+interface Room {
+  label: string;
+  images: string[];
+}
+
+interface Props {
+  rooms: Room[];
+  triggerLabel?: string;
+}
+
+const { rooms, triggerLabel = "Ver todas las fotos" } = Astro.props;
+---
+
+<button class="gallery-trigger" id="galleryTrigger" aria-label="Abrir galería de fotos">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+  </svg>
+  {triggerLabel}
+</button>
+
+<div class="gm-overlay" id="galleryModal" role="dialog" aria-modal="true" aria-label="Galería de fotos">
+  <div class="gm-header">
+    <button class="gm-close" id="galleryClose" aria-label="Cerrar galería">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M2 2L16 16M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <nav class="gm-nav" id="galleryNav" aria-label="Ambientes">
+      {rooms.map((room, i) => (
+        <button class={`gm-nav-btn${i === 0 ? ' active' : ''}`} data-room={i}>
+          {room.label}
+        </button>
+      ))}
+    </nav>
+
+    <div class="gm-header-right">
+      <span class="gm-counter" id="galleryCounter">1 / {rooms.reduce((a, r) => a + r.images.length, 0)}</span>
+    </div>
+  </div>
+
+  <div class="gm-body" id="galleryBody">
+    {rooms.map((room, ri) => (
+      <section class="gm-room" data-room-section={ri} id={`room-${ri}`}>
+        <h2 class="gm-room-label">{room.label}</h2>
+        <div class="gm-images">
+          {room.images.map((src, ii) => (
+            <div class="gm-img-wrap" data-global-index={rooms.slice(0, ri).reduce((a, r) => a + r.images.length, 0) + ii}>
+              <img
+                src={src}
+                alt={`${room.label} · foto ${ii + 1}`}
+                loading={ri === 0 && ii < 3 ? 'eager' : 'lazy'}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</div>
+
+<style>
+  /* ── Trigger button ── */
+  .gallery-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-radius: 999px;
+    background: white;
+    border: 1.5px solid rgba(30, 35, 29, 0.18);
+    color: var(--text, #1e231d);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    font-family: inherit;
+  }
+
+  .gallery-trigger:hover {
+    background: #f5f1e8;
+    border-color: rgba(30, 35, 29, 0.28);
+    transform: translateY(-1px);
+  }
+
+  /* ── Overlay ── */
+  .gm-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: #faf7f2;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .gm-overlay.open {
+    display: flex;
+  }
+
+  /* ── Header ── */
+  .gm-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    height: 64px;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(30, 35, 29, 0.08);
+    flex-shrink: 0;
+  }
+
+  .gm-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid rgba(30, 35, 29, 0.12);
+    color: #1e231d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, transform 0.15s;
+    flex-shrink: 0;
+  }
+
+  .gm-close:hover {
+    background: #f0ece3;
+    transform: scale(1.05);
+  }
+
+  /* ── Nav pills ── */
+  .gm-nav {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 4px 0;
+  }
+
+  .gm-nav::-webkit-scrollbar { display: none; }
+
+  .gm-nav-btn {
+    flex-shrink: 0;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid rgba(30, 35, 29, 0.12);
+    color: #66705f;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+
+  .gm-nav-btn:hover {
+    background: rgba(109, 117, 82, 0.08);
+    color: #1e231d;
+    border-color: rgba(109, 117, 82, 0.2);
+  }
+
+  .gm-nav-btn.active {
+    background: #1e231d;
+    color: white;
+    border-color: #1e231d;
+  }
+
+  .gm-header-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .gm-counter {
+    font-size: 13px;
+    font-weight: 600;
+    color: #66705f;
+    white-space: nowrap;
+  }
+
+  /* ── Body (scrollable) ── */
+  .gm-body {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    padding: 32px 0 80px;
+  }
+
+  /* ── Room section ── */
+  .gm-room {
+    max-width: 960px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+  }
+
+  .gm-room:last-child {
+    margin-bottom: 0;
+  }
+
+  .gm-room-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e231d;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(30, 35, 29, 0.08);
+    text-transform: capitalize;
+  }
+
+  /* ── Image grid ── */
+  .gm-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* First image of each room spans full width */
+  .gm-img-wrap:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .gm-img-wrap {
+    overflow: hidden;
+    border-radius: 16px;
+    background: #e8e4db;
+    cursor: zoom-in;
+    position: relative;
+  }
+
+  .gm-img-wrap:first-child {
+    aspect-ratio: 16 / 9;
+  }
+
+  .gm-img-wrap:not(:first-child) {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* If only one image total, don't span */
+  .gm-images:has(.gm-img-wrap:only-child) .gm-img-wrap {
+    grid-column: 1 / -1;
+  }
+
+  .gm-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .gm-img-wrap:hover img {
+    transform: scale(1.03);
+  }
+
+  /* ── Lightbox inside gallery ── */
+  .gm-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background: rgba(10, 12, 10, 0.92);
+    backdrop-filter: blur(16px);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gm-lightbox.open {
+    display: flex;
+  }
+
+  .gm-lb-img {
+    max-width: min(92vw, 1200px);
+    max-height: 90vh;
+    border-radius: 12px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .gm-lb-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+
+  .gm-lb-close:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .gm-lb-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .gm-lb-arrow:hover {
+    background: rgba(255, 255, 255, 0.20);
+  }
+
+  .gm-lb-prev { left: 20px; }
+  .gm-lb-next { right: 20px; }
+
+  .gm-lb-counter {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 640px) {
+    .gm-header {
+      padding: 0 16px;
+      height: 58px;
+    }
+
+    .gm-room {
+      padding: 0 16px;
+      margin-bottom: 40px;
+    }
+
+    .gm-images {
+      grid-template-columns: 1fr;
+    }
+
+    .gm-img-wrap:first-child {
+      grid-column: 1;
+    }
+
+    .gm-img-wrap {
+      aspect-ratio: 4 / 3 !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gm-header-right {
+      display: none;
+    }
+  }
+</style>
+
+<!-- Lightbox DOM -->
+<div class="gm-lightbox" id="gmLightbox">
+  <button class="gm-lb-close" id="gmLbClose" aria-label="Cerrar">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M1 1L15 15M15 1L1 15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <button class="gm-lb-arrow gm-lb-prev" id="gmLbPrev" aria-label="Anterior">‹</button>
+  <img class="gm-lb-img" id="gmLbImg" src="" alt="" />
+  <button class="gm-lb-arrow gm-lb-next" id="gmLbNext" aria-label="Siguiente">›</button>
+  <div class="gm-lb-counter" id="gmLbCounter"></div>
+</div>
+
+<script define:vars={{ rooms }}>
+  (() => {
+    // Flatten all images for lightbox navigation
+    const allImages = rooms.flatMap((r) => r.images.map((src) => ({ src, label: r.label })));
+    const total = allImages.length;
+
+    // DOM refs
+    const overlay  = document.getElementById('galleryModal');
+    const trigger  = document.getElementById('galleryTrigger');
+    const closeBtn = document.getElementById('galleryClose');
+    const body     = document.getElementById('galleryBody');
+    const nav      = document.getElementById('galleryNav');
+    const counter  = document.getElementById('galleryCounter');
+    const navBtns  = nav?.querySelectorAll('.gm-nav-btn');
+    const lightbox = document.getElementById('gmLightbox');
+    const lbImg    = document.getElementById('gmLbImg');
+    const lbClose  = document.getElementById('gmLbClose');
+    const lbPrev   = document.getElementById('gmLbPrev');
+    const lbNext   = document.getElementById('gmLbNext');
+    const lbCtr    = document.getElementById('gmLbCounter');
+
+    let currentLbIndex = 0;
+    let scrollLocked = false;
+
+    // ── Open / Close gallery ──────────────────────────────────
+    function openGallery() {
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      overlay.focus?.();
+    }
+
+    function closeGallery() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    trigger?.addEventListener('click', openGallery);
+    closeBtn?.addEventListener('click', closeGallery);
+
+    // ── Scroll → active nav pill ───────────────────────────────
+    const roomSections = body?.querySelectorAll('.gm-room');
+
+    function updateNavOnScroll() {
+      if (!roomSections || scrollLocked) return;
+      const scrollTop = body.scrollTop;
+      let activeRoom = 0;
+
+      roomSections.forEach((section, i) => {
+        const top = section.offsetTop - body.offsetTop - 120;
+        if (scrollTop >= top) activeRoom = i;
+      });
+
+      navBtns?.forEach((btn, i) => {
+        btn.classList.toggle('active', i === activeRoom);
+      });
+
+      // Update image counter based on visible area
+      updateCounterFromScroll();
+    }
+
+    function updateCounterFromScroll() {
+      if (!counter) return;
+      const wraps = body?.querySelectorAll('.gm-img-wrap');
+      let visible = 1;
+      wraps?.forEach((wrap) => {
+        const rect = wrap.getBoundingClientRect();
+        const bodyRect = body.getBoundingClientRect();
+        if (rect.top < bodyRect.bottom - 100 && rect.bottom > bodyRect.top + 100) {
+          const idx = parseInt(wrap.dataset.globalIndex || '0', 10);
+          visible = Math.max(visible, idx + 1);
+        }
+      });
+      counter.textContent = `${Math.min(visible, total)} / ${total}`;
+    }
+
+    body?.addEventListener('scroll', updateNavOnScroll, { passive: true });
+
+    // ── Nav pill click → scroll to room ───────────────────────
+    navBtns?.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const roomIdx = parseInt(btn.dataset.room, 10);
+        const section = document.getElementById(`room-${roomIdx}`);
+        if (!section) return;
+
+        scrollLocked = true;
+        navBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        body.scrollTo({ top: section.offsetTop - body.offsetTop - 24, behavior: 'smooth' });
+        setTimeout(() => { scrollLocked = false; }, 700);
+      });
+    });
+
+    // ── Image click → lightbox ─────────────────────────────────
+    body?.addEventListener('click', (e) => {
+      const wrap = e.target.closest('.gm-img-wrap');
+      if (!wrap) return;
+      const idx = parseInt(wrap.dataset.globalIndex || '0', 10);
+      openLightbox(idx);
+    });
+
+    // ── Lightbox ───────────────────────────────────────────────
+    function openLightbox(idx) {
+      currentLbIndex = idx;
+      renderLightbox();
+      lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+    }
+
+    function renderLightbox() {
+      const item = allImages[currentLbIndex];
+      if (!item || !lbImg) return;
+      lbImg.src = item.src;
+      lbImg.alt = `${item.label} · foto ${currentLbIndex + 1}`;
+      if (lbCtr) lbCtr.textContent = `${currentLbIndex + 1} / ${total}`;
+    }
+
+    function prevLb() {
+      currentLbIndex = (currentLbIndex - 1 + total) % total;
+      renderLightbox();
+    }
+
+    function nextLb() {
+      currentLbIndex = (currentLbIndex + 1) % total;
+      renderLightbox();
+    }
+
+    lbClose?.addEventListener('click', closeLightbox);
+    lbPrev?.addEventListener('click', prevLb);
+    lbNext?.addEventListener('click', nextLb);
+
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // ── Keyboard ───────────────────────────────────────────────
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.classList.contains('open')) {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); prevLb(); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); nextLb(); }
+        if (e.key === 'Escape')     closeLightbox();
+        return;
+      }
+      if (overlay?.classList.contains('open')) {
+        if (e.key === 'Escape') closeGallery();
+      }
+    });
+
+    // ── Touch swipe in lightbox ────────────────────────────────
+    let touchStartX = 0;
+    lbImg?.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    lbImg?.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) dx < 0 ? nextLb() : prevLb();
+    });
+  })();
+</script>

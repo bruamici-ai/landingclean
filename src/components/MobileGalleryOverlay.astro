@@ -1,163 +1,168 @@
 ---
-const rooms = [
+const sections = [
   {
     id: "living",
+    tab: "Living",
     title: "Living",
-    subtitle: "Espacio amplio y luminoso para compartir",
+    subtitle: "Amplio, luminoso y pensado para relajarse y compartir",
     images: [
       "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873954/BRU_1444_dywtrx.jpg",
       "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873958/_BRU1492_yuclbe.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873939/_BRU1495_ktxywk.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873941/_BRU1510_kupufv.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873940/_BRU1467_n0yyuh.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873939/_BRU1456_ohv5fx.jpg"
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873943/_BRU1564_jfjczt.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873943/_BRU1576_uwjlvf.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873941/_BRU1537_mjhylq.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873940/_BRU1467_n0yyuh.jpg"
     ]
   },
   {
     id: "cocina",
+    tab: "Cocina completa",
     title: "Cocina completa",
     subtitle: "Equipada para cocinar con comodidad",
     images: [
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873941/_BRU1537_mjhylq.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873941/_BRU1540_jyskkq.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873942/_BRU1543_ksauii.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873942/_BRU1552_lnl1ue.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873943/_BRU1564_jfjczt.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873943/_BRU1576_uwjlvf.jpg"
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888577/IMG_7313_cu0l4k.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873954/_BRU1843_nawict.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873952/_BRU1774_wyxxjb.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873952/_BRU1792_t3op77.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873952/_BRU1800_m3vueb.jpg"
     ]
   },
   {
     id: "comedor",
-    title: "Comedor",
-    subtitle: "Ideal para reuniones y comidas en grupo",
+    tab: "Comedor",
+    title: "Comedor y espacios para compartir",
+    subtitle: "Una casa preparada para reuniones, sobremesas y grupo",
     images: [
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873945/_BRU1602_a7hpbb.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873945/_BRU1611_dk9hcw.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873941/_BRU1510_kupufv.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873943/_BRU1556_ov7ers.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873942/_BRU1552_lnl1ue.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873941/_BRU1540_jyskkq.jpg"
+    ]
+  },
+  {
+    id: "dorm1",
+    tab: "Dormitorio 1",
+    title: "Dormitorio 1",
+    subtitle: "Descanso cálido y cómodo",
+    images: [
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873952/_BRU1738_vjsasu.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873950/_BRU1727_sswi3t.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873950/_BRU1734_jrndoh.jpg"
+    ]
+  },
+  {
+    id: "dorm2",
+    tab: "Dormitorio 2",
+    title: "Dormitorio 2",
+    subtitle: "Más espacio y flexibilidad para el grupo",
+    images: [
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873946/_BRU1638_gcorjf.jpg",
       "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873945/_BRU1630_c5tben.jpg"
     ]
   },
   {
-    id: "dormitorio-1",
-    title: "Dormitorio 1",
-    subtitle: "Confort, amplitud y luz natural",
-    images: [
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873947/_BRU1645_b5vzty.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873947/_BRU1685_ib5yow.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873947/_BRU1690_ri25n7.jpg"
-    ]
-  },
-  {
-    id: "dormitorio-2",
-    title: "Dormitorio 2",
-    subtitle: "Flexible y cómodo para familias o grupos",
-    images: [
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873948/_BRU1699_xv5w2d.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873948/_BRU1708_pfwod0.jpg"
-    ]
-  },
-  {
-    id: "dormitorio-3",
+    id: "dorm3",
+    tab: "Dormitorio 3",
     title: "Dormitorio 3",
-    subtitle: "Un ambiente cálido y acogedor",
+    subtitle: "Habitación funcional y luminosa",
+    images: [
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873947/_BRU1685_ib5yow.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873945/_BRU1586_bpmrfn.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873945/_BRU1611_dk9hcw.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873945/_BRU1602_a7hpbb.jpg"
+    ]
+  },
+  {
+    id: "dorm4",
+    tab: "Dormitorio 4",
+    title: "Dormitorio 4",
+    subtitle: "Una opción más para familias o grupos grandes",
+    images: [
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888702/04256716-0B9D-4943-8CE2-4B94ACCAC653_q61stw.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888582/IMG_7654_ckiti4.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888578/IMG_7640_vnmgyh.jpg"
+    ]
+  },
+  {
+    id: "banos",
+    tab: "Baños",
+    title: "Baños",
+    subtitle: "Funcionales, limpios y cómodos para la estadía",
     images: [
       "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873949/_BRU1718_roagq1.jpg",
       "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873949/_BRU1720_v3eqfg.jpg"
     ]
   },
   {
-    id: "dormitorio-4",
-    title: "Dormitorio 4",
-    subtitle: "Más espacio para recibir a todos",
-    images: [
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873950/_BRU1727_sswi3t.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873950/_BRU1734_jrndoh.jpg"
-    ]
-  },
-  {
-    id: "banos",
-    title: "Baños",
-    subtitle: "Modernos, funcionales y bien resueltos",
-    images: [
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873952/_BRU1738_vjsasu.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873951/_BRU1757_homgad.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873952/_BRU1774_wyxxjb.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873952/_BRU1792_t3op77.jpg"
-    ]
-  },
-  {
     id: "oficina",
-    title: "Oficina",
-    subtitle: "Un espacio extra para trabajar o descansar",
+    tab: "Oficina",
+    title: "Oficina y rincón de trabajo",
+    subtitle: "Un espacio útil para trabajar o concentrarse",
     images: [
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873952/_BRU1800_m3vueb.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873953/_BRU1814_ynekgz.jpg"
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873954/_BRU1833_mc1wlg.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888578/IMG_9938_cnwagz.jpg"
     ]
   },
   {
     id: "patio",
+    tab: "Patio, pileta y jacuzzi",
     title: "Patio, pileta y jacuzzi",
-    subtitle: "El corazón exterior de la casa",
+    subtitle: "El gran diferencial exterior de la casa",
     images: [
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873954/_BRU1833_mc1wlg.jpg",
-      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873954/_BRU1843_nawict.jpg"
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888578/IMG_7668_qj1zdm.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888576/IMG_0278_ab7kiw.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888576/IMG_6243_iaygdh.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888576/IMG_5823_lwqd5t.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888576/IMG_4481_ypxgpt.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888577/IMG_6244_magjyj.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888575/IMG_0277_ypdywf.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888576/IMG_6938_nokcbm.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888579/IMG_7680_sxmfvd.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888578/IMG_9273_djmdmu.jpg",
+      "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775888578/IMG_7661_ntapsq.jpg"
     ]
   }
 ];
 ---
 
-<section class="gallery-entry">
-  <div class="gallery-entry__inner">
-    <div>
-      <p class="eyebrow">Recorrido fotográfico</p>
-      <h2>Explorá la casa por ambientes</h2>
-      <p class="lead">Descubrí cada espacio en un recorrido visual pensado para que puedas imaginar tu estadía desde el primer vistazo.</p>
-    </div>
-
-    <button class="open-gallery-btn" type="button" id="open-room-gallery">
-      Ver galería completa
-    </button>
-  </div>
-</section>
-
-<div class="gallery-overlay" id="room-gallery-overlay" aria-hidden="true">
-  <div class="gallery-overlay__backdrop" data-close-gallery></div>
-
-  <div class="gallery-overlay__panel" role="dialog" aria-modal="true" aria-labelledby="room-gallery-title">
-    <div class="gallery-overlay__topbar">
+<div class="gallery-overlay" id="galleryOverlay" aria-hidden="true">
+  <div class="gallery-panel">
+    <div class="gallery-header">
       <div>
-        <p class="eyebrow">Galería</p>
-        <h3 id="room-gallery-title">Recorrido por ambientes</h3>
+        <div class="gallery-kicker">Galería</div>
+        <h2>Recorrido por ambientes</h2>
       </div>
-
-      <button class="close-gallery-btn" type="button" data-close-gallery aria-label="Cerrar galería">
-        ✕
-      </button>
+      <button class="gallery-close" id="galleryClose" aria-label="Cerrar">×</button>
     </div>
 
-    <nav class="gallery-overlay__nav">
-      {rooms.map((room) => (
-        <a href={`#${room.id}`}>{room.title}</a>
+    <div class="gallery-tabs">
+      {sections.map((section) => (
+        <button class="gallery-tab" data-target={section.id}>{section.tab}</button>
       ))}
-    </nav>
+    </div>
 
-    <div class="gallery-overlay__content">
-      {rooms.map((room) => (
-        <section class="room-block" id={room.id}>
-          <div class="room-block__head">
-            <p class="eyebrow">{room.title}</p>
-            <h4>{room.subtitle}</h4>
+    <div class="gallery-body">
+      {sections.map((section, idx) => (
+        <section
+          class:list={["gallery-section", idx === 0 && "is-active"]}
+          id={section.id}
+        >
+          <div class="section-copy">
+            <div class="section-kicker">{section.tab}</div>
+            <h3>{section.title}</h3>
+            <p>{section.subtitle}</p>
           </div>
 
-          <div class="room-block__photos">
-            {room.images.map((img, i) => (
-              <figure class={`room-photo ${i === 0 ? "room-photo--hero" : ""}`}>
-                <img
-                  src={img}
-                  alt={`${room.title} ${i + 1}`}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
+          <div class="section-grid">
+            {section.images.map((img, i) => (
+              <a
+                href={img}
+                target="_blank"
+                rel="noreferrer"
+                class:list={["section-item", i === 0 && "section-item--hero"]}
+              >
+                <img src={img} alt={`${section.title} ${i + 1}`} loading="lazy" />
+              </a>
             ))}
           </div>
         </section>
@@ -166,245 +171,231 @@ const rooms = [
   </div>
 </div>
 
+<button class="gallery-floating-trigger" id="galleryOpen">
+  Mostrar galería completa
+</button>
+
 <script>
-  const openBtn = document.getElementById("open-room-gallery");
-  const overlay = document.getElementById("room-gallery-overlay");
-  const closeBtns = document.querySelectorAll("[data-close-gallery]");
+  const overlay = document.getElementById('galleryOverlay');
+  const openBtn = document.getElementById('galleryOpen');
+  const closeBtn = document.getElementById('galleryClose');
+  const tabs = Array.from(document.querySelectorAll('.gallery-tab'));
+  const sectionsEls = Array.from(document.querySelectorAll('.gallery-section'));
 
-  const openGallery = () => {
-    overlay?.setAttribute("aria-hidden", "false");
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-  };
+  function openGallery() {
+    if (!overlay) return;
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
 
-  const closeGallery = () => {
-    overlay?.setAttribute("aria-hidden", "true");
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
-  };
+  function closeGallery() {
+    if (!overlay) return;
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
-  openBtn?.addEventListener("click", openGallery);
-  closeBtns.forEach((btn) => btn.addEventListener("click", closeGallery));
+  function activateSection(id) {
+    sectionsEls.forEach((el) => {
+      el.classList.toggle('is-active', el.id === id);
+    });
+    tabs.forEach((tab) => {
+      tab.classList.toggle('is-active', tab.dataset.target === id);
+    });
+  }
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overlay?.getAttribute("aria-hidden") === "false") {
+  if (openBtn) openBtn.addEventListener('click', openGallery);
+  if (closeBtn) closeBtn.addEventListener('click', closeGallery);
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => activateSection(tab.dataset.target));
+  });
+
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeGallery();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay?.classList.contains('is-open')) {
       closeGallery();
     }
   });
+
+  if (tabs.length) tabs[0].classList.add('is-active');
 </script>
 
 <style>
-  .gallery-entry {
-    padding: 1rem 1rem 0;
+  .gallery-floating-trigger{
+    display:none;
   }
 
-  .gallery-entry__inner {
-    display: grid;
-    gap: 1rem;
-    padding: 1.1rem;
-    border-radius: 22px;
-    background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-    border: 1px solid rgba(255,255,255,.12);
+  .gallery-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(18,18,18,.48);
+    backdrop-filter:blur(10px);
+    z-index:120;
+    opacity:0;
+    pointer-events:none;
+    transition:.22s ease;
   }
 
-  .eyebrow {
-    margin: 0 0 .25rem;
-    font-size: .72rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    opacity: .7;
+  .gallery-overlay.is-open{
+    opacity:1;
+    pointer-events:auto;
   }
 
-  .gallery-entry h2,
-  .gallery-overlay h3,
-  .room-block h4 {
-    margin: 0;
-    line-height: 1.05;
+  .gallery-panel{
+    position:absolute;
+    inset:24px;
+    background:#f7f4ee;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 24px 80px rgba(0,0,0,.24);
+    display:flex;
+    flex-direction:column;
   }
 
-  .lead {
-    margin: .5rem 0 0;
-    font-size: .96rem;
-    line-height: 1.45;
-    opacity: .88;
+  .gallery-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:22px 24px 16px;
+    border-bottom:1px solid rgba(30,35,29,.08);
+    background:#f7f4ee;
   }
 
-  .open-gallery-btn,
-  .close-gallery-btn {
-    appearance: none;
-    border: 0;
-    cursor: pointer;
+  .gallery-kicker,
+  .section-kicker{
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:12px;
+    color:#7a7a72;
+    font-weight:700;
   }
 
-  .open-gallery-btn {
-    width: 100%;
-    border-radius: 999px;
-    padding: .95rem 1rem;
-    font-weight: 700;
-    font-size: .96rem;
-    background: #fff;
-    color: #111;
+  .gallery-header h2{
+    margin:6px 0 0;
+    font-size:34px;
+    line-height:1;
   }
 
-  .gallery-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 120;
-    pointer-events: none;
+  .gallery-close{
+    width:44px;
+    height:44px;
+    border:none;
+    border-radius:999px;
+    background:#111;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
   }
 
-  .gallery-overlay[aria-hidden="false"] {
-    pointer-events: auto;
+  .gallery-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:14px 24px;
+    border-bottom:1px solid rgba(30,35,29,.08);
+    background:#f7f4ee;
   }
 
-  .gallery-overlay__backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, .62);
-    opacity: 0;
-    transition: opacity .25s ease;
+  .gallery-tab{
+    border:1px solid rgba(30,35,29,.08);
+    background:#fff;
+    color:#5f665b;
+    padding:10px 14px;
+    border-radius:999px;
+    font-weight:700;
+    cursor:pointer;
   }
 
-  .gallery-overlay__panel {
-    position: absolute;
-    inset: auto 0 0 0;
-    height: 92dvh;
-    background: #f5f5f3;
-    color: #171717;
-    border-radius: 24px 24px 0 0;
-    transform: translateY(100%);
-    transition: transform .28s ease;
-    display: grid;
-    grid-template-rows: auto auto 1fr;
-    overflow: hidden;
-    box-shadow: 0 -20px 60px rgba(0,0,0,.28);
+  .gallery-tab.is-active{
+    background:#6d7552;
+    color:#fff;
+    border-color:#6d7552;
   }
 
-  .gallery-overlay[aria-hidden="false"] .gallery-overlay__backdrop {
-    opacity: 1;
+  .gallery-body{
+    flex:1;
+    overflow:auto;
+    padding:24px;
   }
 
-  .gallery-overlay[aria-hidden="false"] .gallery-overlay__panel {
-    transform: translateY(0);
+  .gallery-section{
+    display:none;
   }
 
-  .gallery-overlay__topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    gap: 1rem;
-    padding: 1rem 1rem .75rem;
-    background: #f5f5f3;
-    border-bottom: 1px solid rgba(0,0,0,.08);
+  .gallery-section.is-active{
+    display:block;
   }
 
-  .close-gallery-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 999px;
-    background: #111;
-    color: #fff;
-    font-size: 1rem;
-    flex: 0 0 auto;
+  .section-copy{
+    margin-bottom:18px;
   }
 
-  .gallery-overlay__nav {
-    display: flex;
-    gap: .55rem;
-    overflow-x: auto;
-    padding: .75rem 1rem;
-    background: #f5f5f3;
-    border-bottom: 1px solid rgba(0,0,0,.08);
-    scrollbar-width: none;
+  .section-copy h3{
+    margin:8px 0 8px;
+    font-size:34px;
+    line-height:1;
   }
 
-  .gallery-overlay__nav::-webkit-scrollbar {
-    display: none;
+  .section-copy p{
+    margin:0;
+    color:#636b61;
+    line-height:1.7;
+    max-width:62ch;
   }
 
-  .gallery-overlay__nav a {
-    flex: 0 0 auto;
-    text-decoration: none;
-    color: #171717;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,.08);
-    border-radius: 999px;
-    padding: .65rem .9rem;
-    font-size: .9rem;
-    white-space: nowrap;
+  .section-grid{
+    display:grid;
+    grid-template-columns:1.35fr .65fr;
+    gap:14px;
   }
 
-  .gallery-overlay__content {
-    overflow-y: auto;
-    padding: 1rem;
-    -webkit-overflow-scrolling: touch;
+  .section-item{
+    display:block;
+    border-radius:22px;
+    overflow:hidden;
+    background:#ddd;
+    min-height:260px;
   }
 
-  .room-block {
-    margin-bottom: 1.4rem;
-    scroll-margin-top: 1rem;
+  .section-item--hero{
+    grid-row:span 2;
+    min-height:540px;
   }
 
-  .room-block__head {
-    margin-bottom: .75rem;
+  .section-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
   }
 
-  .room-block__photos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .55rem;
-  }
-
-  .room-photo {
-    margin: 0;
-    overflow: hidden;
-    border-radius: 18px;
-    background: #ddd;
-    min-height: 120px;
-  }
-
-  .room-photo--hero {
-    grid-column: 1 / -1;
-    min-height: 220px;
-  }
-
-  .room-photo img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-
-  @media (min-width: 768px) {
-    .gallery-entry {
-      padding: 1.25rem 0 0;
+  @media (max-width: 900px){
+    .gallery-panel{
+      inset:12px;
+      border-radius:22px;
     }
 
-    .gallery-entry__inner {
-      padding: 1.25rem;
-      grid-template-columns: 1.4fr auto;
-      align-items: center;
+    .gallery-header h2,
+    .section-copy h3{
+      font-size:28px;
     }
 
-    .open-gallery-btn {
-      width: auto;
-      min-width: 220px;
+    .section-grid{
+      grid-template-columns:1fr;
     }
 
-    .gallery-overlay__panel {
-      inset: 2rem;
-      height: auto;
-      border-radius: 28px;
-    }
-
-    .room-block__photos {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .room-photo--hero {
-      grid-column: span 2;
-      grid-row: span 2;
-      min-height: 360px;
+    .section-item,
+    .section-item--hero{
+      min-height:220px;
+      grid-row:auto;
     }
   }
 </style>

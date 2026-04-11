@@ -1,0 +1,416 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const phone = "5492616545175";
+const wa = `https://wa.me/${phone}?text=${encodeURIComponent("Hola Heliana, quiero consultar por Casa Avellaneda en Mendoza.")}`;
+
+const heroImage = "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4631_rmcvwh.jpg";
+
+const gallery = [
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4631_rmcvwh.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4629_ykk1dl.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4627_yhj2sl.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4591_w9tsck.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4587_aaqvhd.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4590_gmib4r.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4572_dtgh3i.jpg",
+  "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883738/IMG_4594_yapt8a.jpg"
+];
+
+const highlights = [
+  {
+    icon: '📍',
+    title: '5ta Sección, zona muy buscada',
+    text: 'En Nicolás Avellaneda, entre Belgrano y Tiburcio Benegas. Cerca de Aristides, del Parque San Martín y de servicios para moverse con comodidad.'
+  },
+  {
+    icon: '💦',
+    title: 'Patio con piscina y parrilla',
+    text: 'Un exterior agradable para bajar el ritmo, refrescarse y disfrutar la casa en grupo. Parrilla para comidas largas y sobremesas con aire mendocino.'
+  },
+  {
+    icon: '🚗',
+    title: 'Cochera doble incluida',
+    text: 'Dos plazas dentro de la propiedad para que llegues sin preocuparte por el estacionamiento, especialmente útil para grupos que viajan en auto.'
+  },
+  {
+    icon: '🏠',
+    title: 'Amplitud real para grupos',
+    text: 'Con capacidad para hasta 10 huéspedes, 3 habitaciones, 8 camas y 3.5 baños. La distribución permite convivir con comodidad sin pisarse.'
+  }
+];
+
+const useCases = [
+  {
+    title: 'Viajes en familia',
+    text: 'La cantidad de habitaciones, baños y la piscina hacen que funcione muy bien para familias que buscan comodidad sin salir de la ciudad.'
+  },
+  {
+    title: 'Escapadas en grupo',
+    text: 'Patio, parrilla, sala amplia y cochera doble generan una experiencia mucho más disfrutable para compartir que cualquier alojamiento convencional.'
+  },
+  {
+    title: 'Base para recorrer Mendoza',
+    text: 'Ubicación estratégica para llegar rápido a bodegas, montaña o el centro. Equipada para instalarse varios días con comodidad total.'
+  }
+];
+
+const amenities = [
+  ['Piscina privada', 'En el patio exterior, disponible según temporada para disfrutar en grupo.'],
+  ['Parrilla y exterior', 'Un espacio pensado para comidas largas, sobremesas y noches al aire libre.'],
+  ['Cochera doble', 'Dos plazas dentro de la propiedad, sin necesidad de buscar estacionamiento.'],
+  ['3.5 baños', 'Cantidad de baños suficiente para que grupos grandes no tengan cuellos de botella.'],
+  ['8 camas / 3 hab.', 'Distribución pensada para 10 huéspedes con comodidad real en cada habitación.'],
+  ['Cocina equipada', 'Heladera, cocina, utensilios y todo lo necesario para preparar comidas en casa.'],
+  ['5ta Sección', 'Una de las zonas más buscadas de Mendoza por su conectividad y entorno residencial.'],
+  ['Cerca de Aristides', 'A minutos de la mejor oferta gastronómica y de ocio de la ciudad.'],
+  ['Próxima al parque', 'Fácil acceso al Parque General San Martín para paseos y actividades al aire libre.'],
+  ['Zona residencial', 'Entorno tranquilo y seguro, ideal para descansar y desconectarse del ruido.'],
+  ['Check-in coordinado', 'Llegada flexible coordinada directamente con Heliana por WhatsApp.'],
+  ['Atención directa', 'Trato personal desde la reserva hasta el check-out, sin intermediarios.']
+];
+
+const reviews = [
+  {
+    text: 'Hermosa casa amplia, cómoda y en muy buena ubicación. La disfrutamos mucho con toda la familia.',
+    author: 'Karla · 2025'
+  },
+  {
+    text: 'La distribución, la amplitud, la cantidad de baños y la limpieza hacen una estadía excelente. Muy recomendable.',
+    author: 'Laura · 2025'
+  },
+  {
+    text: 'Ideal para grupos, súper bien ubicada y muy cómoda para disfrutar Mendoza. Volveríamos sin dudarlo.',
+    author: 'Christian · 2025'
+  }
+];
+---
+
+<BaseLayout
+  title="Casa Avellaneda | Mendoza"
+  description="Casa cálida y familiar en Mendoza. Hasta 10 huéspedes, piscina, parrilla, cochera doble y excelente ubicación en la 5ta Sección."
+  image={heroImage}
+  url="https://casaavellaneda.pages.dev/"
+>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#" class="brand">
+        <div class="brand-mark">CA</div>
+        <div class="brand-copy">
+          <strong>Casa Avellaneda</strong>
+          <span>Mendoza · 5ta Sección</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#experiencia">Experiencia</a>
+        <a href="#galeria">Galería</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#opiniones">Opiniones</a>
+      </nav>
+
+      <div class="top-right">
+        <div class="score-pill">5.0 · Huéspedes satisfechos</div>
+        <a class="top-cta" href={wa} target="_blank" rel="noreferrer">Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <img src={heroImage} alt="Casa Avellaneda - foto principal" loading="eager" fetchpriority="high" />
+          <div class="hero-overlay"></div>
+          <div class="hero-copy">
+            <div class="eyebrow">Casa cálida y familiar · 5ta Sección · Mendoza</div>
+            <h1>Espacio, calma y una ubicación que simplifica todo.</h1>
+            <p class="hero-sub">
+              Pensada para grupos y familias que quieren disfrutar Mendoza con comodidad real.
+              Patio con piscina, parrilla y cochera doble en una de las zonas más buscadas de la ciudad.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href={wa} target="_blank" rel="noreferrer">Consultar disponibilidad</a>
+              <a class="btn btn-secondary" href="#galeria">Ver fotos</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="side-card">
+            <img src={gallery[1]} alt="Patio y exterior" loading="lazy" />
+            <div class="side-label">Patio y piscina</div>
+          </div>
+          <div class="side-card">
+            <img src={gallery[2]} alt="Interior de la casa" loading="lazy" />
+            <div class="side-label">Espacios para compartir</div>
+          </div>
+          <div class="side-card tall">
+            <img src={gallery[3]} alt="Ambiente interior" loading="lazy" />
+            <div class="side-label">Comodidad real</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>10</strong><span>huéspedes</span></div>
+        <div class="stat"><strong>3</strong><span>dormitorios</span></div>
+        <div class="stat"><strong>8</strong><span>camas</span></div>
+        <div class="stat"><strong>3.5</strong><span>baños</span></div>
+        <div class="stat"><strong>Cochera</strong><span>doble</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="experiencia">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Una casa pensada para instalarse y disfrutar</h2>
+          </div>
+          <p>
+            En la 5ta Sección de Mendoza, Casa Avellaneda combina una ubicación estratégica con una experiencia de casa real: cómoda, familiar y preparada para grupos con dinámica simple.
+          </p>
+        </div>
+
+        <div class="split">
+          <div class="panel">
+            <div class="kicker">La experiencia</div>
+            <p class="lead">
+              Ambientes amplios, patio con piscina y parrilla hacen que la casa se sienta cómoda desde el primer momento. Llegar, instalarse y disfrutar.
+            </p>
+            <p class="lead">
+              La distribución permite que grupos grandes convivan sin incomodidad, con baños suficientes, habitaciones independientes y espacios comunes generosos.
+            </p>
+            <div class="badges">
+              <span class="badge">5ta Sección</span>
+              <span class="badge">Piscina privada</span>
+              <span class="badge">Parrilla</span>
+              <span class="badge">Cochera doble</span>
+              <span class="badge">Ideal para grupos</span>
+            </div>
+          </div>
+
+          <div class="feature-list">
+            {highlights.map((item) => (
+              <article class="feature">
+                <div class="feature-icon">{item.icon}</div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Recorrido fotográfico</h2>
+          </div>
+          <p>
+            Exterior, áreas comunes, habitaciones y detalles para ver la casa con una lectura más completa antes de reservar.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <a class="gallery-big js-lightbox" href={gallery[0]}>
+            <img src={gallery[0]} alt="Foto principal de Casa Avellaneda" loading="lazy" />
+          </a>
+
+          <div class="gallery-small">
+            <a class="js-lightbox" href={gallery[1]}><img src={gallery[1]} alt="Imagen 1" loading="lazy" /></a>
+            <a class="js-lightbox" href={gallery[2]}><img src={gallery[2]} alt="Imagen 2" loading="lazy" /></a>
+            <a class="js-lightbox" href={gallery[3]}><img src={gallery[3]} alt="Imagen 3" loading="lazy" /></a>
+            <a class="js-lightbox" href={gallery[4]}><img src={gallery[4]} alt="Imagen 4" loading="lazy" /></a>
+          </div>
+        </div>
+
+        <div class="gallery-cta">
+          <a class="btn btn-secondary" href={gallery[0]} target="_blank" rel="noopener noreferrer">Ver todas las fotos</a>
+          <a class="btn btn-primary" href={wa} target="_blank" rel="noreferrer">Consultar esta casa</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Ideal para familias y grupos</h2>
+          </div>
+          <p>
+            Por su distribución, capacidad y ubicación, la casa funciona muy bien para distintos tipos de viaje.
+          </p>
+        </div>
+
+        <div class="use-cases">
+          {useCases.map((item) => (
+            <article class="use-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Servicios y comodidades</h2>
+          </div>
+          <p>
+            Todo lo necesario para una estadía cómoda, práctica y disfrutable en Mendoza.
+          </p>
+        </div>
+
+        <div class="amenities">
+          {amenities.map(([title, text]) => (
+            <article class="amenity">
+              <strong>{title}</strong>
+              <span>{text}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="opiniones">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Lo que dicen quienes ya se hospedaron</h2>
+          </div>
+          <p>
+            Los puntos que más se repiten: amplitud, ubicación y comodidad para grupos y familias.
+          </p>
+        </div>
+
+        <div class="review-layout">
+          <div class="review-score">
+            <strong>5.0</strong>
+            <p>
+              Calificación máxima<br />
+              Huéspedes muy satisfechos<br />
+              Amplitud, ubicación y comodidad<br />
+              Recomendada por todos
+            </p>
+          </div>
+
+          <div class="review-grid">
+            {reviews.map((review) => (
+              <blockquote class="review">
+                <p>"{review.text}"</p>
+                <footer>{review.author}</footer>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Una ubicación que hace más fácil el viaje</h2>
+          </div>
+          <p>
+            Nicolás Avellaneda, entre Belgrano y Tiburcio Benegas. Zona cómoda para estar cerca del movimiento de Mendoza con un clima residencial tranquilo.
+          </p>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item">✔ Cerca de Aristides y su oferta gastronómica</div>
+          <div class="check-item">✔ Próxima al Parque General San Martín</div>
+          <div class="check-item">✔ Supermercados y servicios alrededor</div>
+          <div class="check-item">✔ Muy buena base para recorrer la provincia</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Consultá fechas y resolvé todo directo por WhatsApp.</h2>
+          <p>
+            Escribile a Heliana para consultar disponibilidad, pedir más fotos o resolver cualquier duda sobre la casa.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-light" href={wa} target="_blank" rel="noreferrer">Escribir ahora</a>
+            <a class="btn btn-ghost" href="#galeria">Seguir viendo fotos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Casa Avellaneda · Mendoza, Argentina · Contacto directo con Heliana
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">×</button>
+      <img id="lightboxImg" src="" alt="Imagen ampliada" />
+    </div>
+  </div>
+
+  <div class="mobile-wa">
+    <a href={wa} target="_blank" rel="noreferrer">Consultar por WhatsApp</a>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const triggers = document.querySelectorAll('.js-lightbox');
+
+    triggers.forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = el.getAttribute('href');
+        if (!href || !lightbox || !lightboxImg) return;
+        lightboxImg.src = href;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', () => {
+        if (!lightbox || !lightboxImg) return;
+        lightbox.classList.remove('open');
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+      });
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('open');
+          if (lightboxImg) lightboxImg.src = '';
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox?.classList.contains('open')) {
+        lightbox.classList.remove('open');
+        if (lightboxImg) lightboxImg.src = '';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</BaseLayout>

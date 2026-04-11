@@ -8,9 +8,8 @@ const houses = [
     badge: "4,95 · 76 reseñas",
     image: "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775873954/BRU_1444_dywtrx.jpg",
     href: "/la-casa-frente-al-parque",
-    description: "Una casa con presencia, luz y espacios para que el viaje se sienta más pausado, más compartido y más disfrutable.",
-    features: ["Hasta 14 huéspedes", "4 dormitorios", "12 camas", "2.5 baños", "Pileta + jacuzzi"],
-    cta: "Descubrir la experiencia"
+    description: "Una casa amplia y luminosa para grupos grandes, con pileta, jacuzzi, parrilla y una ubicación privilegiada frente al parque.",
+    features: ["Hasta 14 huéspedes", "4 dormitorios", "12 camas", "2.5 baños", "Pileta + jacuzzi"]
   },
   {
     title: "Casa Avellaneda",
@@ -18,9 +17,8 @@ const houses = [
     badge: "5.0 · Muy satisfechos",
     image: "https://res.cloudinary.com/drne78uzo/image/upload/q_auto,f_auto/v1775883741/IMG_4631_rmcvwh.jpg",
     href: "/casa-avellaneda",
-    description: "Una casa cálida y bien resuelta para disfrutar Mendoza con comodidad real, patio con piscina y una dinámica simple desde que llegás.",
-    features: ["Hasta 10 huéspedes", "3 dormitorios", "8 camas", "3.5 baños", "Cochera doble"],
-    cta: "Explorar cómo se vive"
+    description: "Una casa cálida y familiar con piscina, parrilla, cochera doble y una base ideal para disfrutar la ciudad.",
+    features: ["Hasta 10 huéspedes", "3 dormitorios", "8 camas", "3.5 baños", "Cochera doble"]
   }
 ];
 ---
@@ -32,8 +30,8 @@ const houses = [
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
-        <strong>Experiencia Mendoza</strong>
-        <span>Casas para vivir la ciudad con otro ritmo</span>
+        <strong>Casas en Mendoza</strong>
+        <span>Alquiler temporario</span>
       </div>
     </div>
   </header>
@@ -41,11 +39,10 @@ const houses = [
   <main class="page">
     <section class="hero">
       <div class="container">
-        <p class="eyebrow">Casas en Mendoza</p>
-        <h1>Dos experiencias distintas. La misma idea de viajar mejor.</h1>
+        <p class="eyebrow">Alquiler temporario en Mendoza</p>
+        <h1>Dos casas con identidad propia, pensadas para disfrutar la ciudad con comodidad.</h1>
         <p class="lead">
-          No se trata solo de elegir una casa, sino de elegir cómo querés vivir Mendoza:
-          frente al parque, con más pausa y aire; o en 5ta Sección, con una comodidad simple y una ubicación que hace todo más fácil.
+          Elegí la casa que mejor se adapte a tu viaje: una experiencia premium frente al parque con pileta y jacuzzi, o una opción cálida y familiar en 5ta Sección con piscina y cochera doble.
         </p>
       </div>
     </section>
@@ -68,7 +65,7 @@ const houses = [
                 {house.features.map((f) => <span class="feature-pill">{f}</span>)}
               </div>
 
-              <a href={house.href} class="btn">{house.cta} →</a>
+              <a href={house.href} class="btn">Ver casa →</a>
             </div>
           </article>
         ))}
@@ -78,7 +75,7 @@ const houses = [
 
   <footer class="footer">
     <div class="container">
-      Mendoza, Argentina · Casas de alquiler temporario
+      Mendoza, Argentina · Alquiler temporario
     </div>
   </footer>
 </BaseLayout>
