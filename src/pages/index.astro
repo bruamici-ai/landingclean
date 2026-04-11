@@ -18,54 +18,54 @@ const gallery = [
 const highlights = [
   {
     icon: '🌳',
-    title: 'Ubicación privilegiada frente al parque',
-    text: 'Frente al Parque General San Martín, en una zona muy buscada, tranquila y bien conectada con bares, restaurantes y paseos.'
+    title: 'Frente al Parque General San Martín',
+    text: 'Una de las ubicaciones más valoradas de Mendoza: verde, tranquila y muy bien conectada con restaurantes, paseos y puntos clave de la ciudad.'
   },
   {
     icon: '💦',
     title: 'Pileta, jacuzzi y patio privado',
-    text: 'Uno de los diferenciales más fuertes de la casa, ideal para transformar una estadía en una experiencia más completa.'
+    text: 'El exterior le da un plus real a la estadía y convierte la casa en una opción ideal para descansar, compartir y disfrutar más el tiempo en grupo.'
   },
   {
     icon: '👨‍👩‍👧‍👦',
-    title: 'Escala real para grupos y familias',
-    text: 'Hasta 14 huéspedes, 4 dormitorios, 12 camas y espacios comunes amplios que permiten convivir cómodamente.'
+    title: 'Espacio real para grupos y familias',
+    text: 'Con capacidad para hasta 14 huéspedes, dormitorios cómodos y áreas comunes amplias, la casa permite convivir con comodidad.'
   },
   {
     icon: '✨',
     title: 'Hospitalidad muy bien valorada',
-    text: 'Las reseñas destacan atención cercana, respuestas rápidas y una experiencia cálida desde la llegada.'
+    text: 'Las reseñas destacan la atención, la rapidez en la comunicación y la sensación de sentirse bien recibidos desde el primer momento.'
   }
 ];
 
 const useCases = [
   {
-    title: 'Ideal para familias',
-    text: 'Por su distribución, amplitud y patio, funciona muy bien para viajes con chicos o grupos familiares.'
+    title: 'Viajes en familia',
+    text: 'La distribución, el patio y la cantidad de plazas hacen que funcione muy bien para familias que buscan comodidad y buena ubicación.'
   },
   {
-    title: 'Excelente para grupos',
-    text: 'Living, comedor, cocina y exterior permiten compartir mucho mejor que en un alojamiento estándar.'
+    title: 'Escapadas en grupo',
+    text: 'Living, comedor, cocina y exterior generan una experiencia mucho más disfrutable para compartir que la de un alojamiento convencional.'
   },
   {
-    title: 'Muy buena para estadías largas',
-    text: 'Wifi rápido, lavarropas, cocina equipada y una ubicación cómoda para vivir Mendoza con libertad.'
+    title: 'Estadías más largas',
+    text: 'Wifi rápido, cocina equipada, lavarropas y una ubicación práctica permiten instalarse varios días con comodidad.'
   }
 ];
 
 const amenities = [
   ['Pileta privada', 'Disponible según temporada, dentro de un patio pensado para disfrutar el exterior.'],
   ['Jacuzzi privado', 'Disponible todo el año y muy valorado por quienes buscan una experiencia más confortable.'],
-  ['Wifi 96 Mbps', 'Verificado, útil para videollamadas, trabajo remoto y streaming.'],
-  ['Estacionamiento', 'Hasta 3 plazas dentro de la propiedad, más opciones en la calle.'],
+  ['Wifi 96 Mbps', 'Ideal para videollamadas, trabajo remoto, streaming y uso simultáneo de varios dispositivos.'],
+  ['Estacionamiento', 'Hasta 3 plazas dentro de la propiedad, con más opciones disponibles en la calle.'],
   ['TV + home theater', 'Televisor HD de 55” con Netflix y sistema Sony con bluetooth.'],
-  ['Cocina equipada', 'Heladera, horno, microondas, lavavajillas, cafetera, tostadora y vajilla.'],
-  ['Parrilla y comedor exterior', 'Un punto muy fuerte para grupos, reuniones y noches de asado.'],
-  ['Check-in autónomo', 'Caja de seguridad para llaves y llegada más flexible.'],
-  ['Pet friendly', 'Se permiten mascotas, algo muy valioso para cierto perfil de huésped.'],
-  ['Zona de trabajo', 'Útil para estadías largas o viajes que mezclan descanso y trabajo.'],
-  ['Cuna incluida', 'Muy buena ventaja para familias.'],
-  ['Entorno y vistas', 'Vista al parque, patio y un sector muy bien percibido de la ciudad.']
+  ['Cocina equipada', 'Heladera, horno, microondas, lavavajillas, cafetera, tostadora y vajilla completa.'],
+  ['Parrilla y comedor exterior', 'Uno de los espacios más disfrutables para reuniones, comidas y noches al aire libre.'],
+  ['Check-in autónomo', 'Caja de seguridad para llaves para una llegada más flexible.'],
+  ['Pet friendly', 'Se permiten mascotas, algo especialmente valorado por muchos huéspedes.'],
+  ['Zona de trabajo', 'Muy útil para quienes combinan descanso con trabajo remoto.'],
+  ['Cuna incluida', 'Una ventaja concreta para familias que viajan con bebés.'],
+  ['Entorno y vistas', 'Vista al parque, patio privado y una zona muy apreciada por quienes visitan Mendoza.']
 ];
 
 const reviews = [
@@ -90,7 +90,7 @@ const reviews = [
 
 <BaseLayout
   title="La Casa Frente al Parque | Mendoza"
-  description="Casa premium frente al Parque San Martín en Mendoza. Hasta 14 huéspedes, pileta, jacuzzi, patio, parrilla y ubicación privilegiada."
+  description="Casa frente al Parque San Martín en Mendoza. Hasta 14 huéspedes, pileta, jacuzzi, patio, parrilla y ubicación privilegiada."
   image={heroImage}
   url="https://casafrentealparque.pages.dev/"
 >
@@ -128,8 +128,8 @@ const reviews = [
             <div class="eyebrow">Top 10% · Favorito entre huéspedes · 4,95/5</div>
             <h1>Una casa con presencia, color y alma mendocina frente al parque.</h1>
             <p class="hero-sub">
-              Amplia, cálida y pensada para grupos y familias que buscan una experiencia especial en Mendoza,
-              con pileta, jacuzzi, parrilla y una de las ubicaciones más buscadas de la ciudad.
+              Amplia, cálida y pensada para grupos y familias que buscan una estadía especial en Mendoza,
+              con pileta, jacuzzi, parrilla y una ubicación realmente privilegiada.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href={wa} target="_blank" rel="noreferrer">Consultar disponibilidad</a>
@@ -172,7 +172,7 @@ const reviews = [
             <h2>Una casa pensada para disfrutar Mendoza con comodidad</h2>
           </div>
           <p>
-            Frente al Parque General San Martín, esta casa combina amplitud, calidez y una ubicación privilegiada para disfrutar Mendoza con comodidad.
+            Frente al Parque General San Martín, esta propiedad combina amplitud, calidez y una forma de alojarse mucho más cómoda para quienes viajan en familia o en grupo.
           </p>
         </div>
 
@@ -180,10 +180,10 @@ const reviews = [
           <div class="panel">
             <div class="kicker">La experiencia</div>
             <p class="lead">
-              Ambientes amplios, luz natural, espacios para compartir y un exterior privado hacen que la estadía se sienta cómoda desde el primer momento.
+              Ambientes amplios, buena luz natural y espacios para compartir hacen que la casa se sienta cómoda desde el primer momento.
             </p>
             <p class="lead">
-              Es una casa ideal para descansar, reunirse y disfrutar la ciudad en una ubicación privilegiada frente al parque.
+              El patio con pileta, el jacuzzi y la parrilla completan una experiencia ideal para descansar, reunirse y disfrutar la ciudad sin resignar ubicación ni privacidad.
             </p>
             <div class="badges">
               <span class="badge">Frente al parque</span>
@@ -321,7 +321,7 @@ const reviews = [
           <h2>Consultá fechas y resolvé todo directo por WhatsApp.</h2>
           <p>
             Si buscás una casa amplia, bien ubicada y preparada para disfrutar Mendoza con comodidad,
-            esta propiedad tiene argumentos muy fuertes para convencer.
+            esta opción reúne muchos de los atributos más buscados por familias y grupos.
           </p>
           <div class="cta-actions">
             <a class="btn btn-light" href={wa} target="_blank" rel="noreferrer">Escribir ahora</a>
