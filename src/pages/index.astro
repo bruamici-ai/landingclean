@@ -1,4 +1,3 @@
----
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const houses = [
@@ -23,16 +22,44 @@ const houses = [
     cta: "Explorar cómo se vive"
   }
 ];
+
+const services = [
+  {
+    title: "Traslados",
+    subtitle: "Moverse sin complicaciones",
+    description: "Coordinamos traslados tercerizados para grupos, salidas a bodegas, charters y recorridos para que todo el viaje fluya mejor."
+  },
+  {
+    title: "Compras previas",
+    subtitle: "Llegar y tener todo listo",
+    description: "Podemos organizar las compras que necesites para la estadía y dejarlas resueltas antes de tu llegada."
+  },
+  {
+    title: "Artículos regionales",
+    subtitle: "Sabores y regalos de Mendoza",
+    description: "Vinos, conservas, aceites y selecciones especiales para sumar un detalle local a la experiencia."
+  },
+  {
+    title: "Degustación en casa",
+    subtitle: "A tu ritmo y en tu espacio",
+    description: "Una propuesta pensada para disfrutar una experiencia guiada desde la comodidad de la casa, en el horario que prefieran."
+  },
+  {
+    title: "Parrillero",
+    subtitle: "El asado resuelto",
+    description: "Si quieren disfrutar sin cocinar, podemos coordinar un parrillero para que el encuentro sea solo para relajarse."
+  }
+];
 ---
 
 <BaseLayout
-  title="Casas en Mendoza | Alquiler temporario"
-  description="Dos casas de alquiler temporario en Mendoza. Una frente al Parque San Martín y otra en la 5ta Sección. Ideales para familias y grupos."
+  title="Experiencias Mendoza | Casas y servicios para vivir la ciudad mejor"
+  description="Dos casas de alquiler temporario en Mendoza y una red de servicios complementarios para que la estadía sea más simple, cómoda y disfrutable."
 >
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
-        <strong>Experiencia Mendoza</strong>
+        <strong>Experiencias Mendoza</strong>
         <span>Casas para vivir la ciudad con otro ritmo</span>
       </div>
     </div>
@@ -40,45 +67,97 @@ const houses = [
 
   <main class="page">
     <section class="hero">
-      <div class="container">
+      <div class="container hero-inner">
         <p class="eyebrow">Casas en Mendoza</p>
-        <h1>Dos experiencias distintas. La misma idea de viajar mejor.</h1>
+        <h1>Dos casas, una mejor forma de vivir Mendoza.</h1>
         <p class="lead">
-          No se trata solo de elegir una casa, sino de elegir cómo querés vivir Mendoza:
-          frente al parque, con más pausa y aire; o en 5ta Sección, con una comodidad simple y una ubicación que hace todo más fácil.
+          Elegí dónde quedarte y nosotros te ayudamos con el resto.
+          Casas pensadas para disfrutar la ciudad con comodidad real, ubicación clave
+          y todo lo necesario para que el viaje fluya.
         </p>
       </div>
     </section>
 
     <section class="houses">
-      <div class="container grid">
-        {houses.map((house) => (
-          <article class="card">
-            <a href={house.href} class="image-wrap">
-              <img src={house.image} alt={house.title} loading="lazy" />
-              <div class="image-badge">{house.badge}</div>
-            </a>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Alojamiento</p>
+          <h2 class="section-title">Nuestras casas</h2>
+          <p class="section-copy">
+            Dos formas distintas de hospedarse en Mendoza, con la misma idea de fondo:
+            buena ubicación, espacios cómodos y una estadía que se sienta simple desde el primer momento.
+          </p>
+        </div>
 
-            <div class="content">
-              <p class="subtitle">{house.subtitle}</p>
-              <h2>{house.title}</h2>
-              <p class="description">{house.description}</p>
+        <div class="grid houses-grid">
+          {houses.map((house) => (
+            <article class="card house-card">
+              <a href={house.href} class="image-wrap">
+                <img src={house.image} alt={house.title} loading="lazy" />
+                <div class="image-badge">{house.badge}</div>
+              </a>
 
-              <div class="features">
-                {house.features.map((f) => <span class="feature-pill">{f}</span>)}
+              <div class="content">
+                <p class="subtitle">{house.subtitle}</p>
+                <h3>{house.title}</h3>
+                <p class="description">{house.description}</p>
+
+                <div class="features">
+                  {house.features.map((f) => <span class="feature-pill">{f}</span>)}
+                </div>
+
+                <a href={house.href} class="btn">{house.cta} →</a>
               </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
 
-              <a href={house.href} class="btn">{house.cta} →</a>
-            </div>
-          </article>
-        ))}
+    <section class="bridge">
+      <div class="container bridge-inner">
+        <p class="bridge-kicker">Servicios opcionales</p>
+        <h2>Además del alojamiento, podemos ayudarte con algunos extras.</h2>
+        <p>
+          Las casas son el centro de la experiencia. Lo demás funciona como complemento:
+          soluciones tercerizadas y detalles pensados para que organizar el viaje sea más cómodo.
+        </p>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <div class="section-head services-head">
+          <p class="eyebrow">Complementos de estadía</p>
+          <h2 class="section-title">Servicios que pueden sumar al viaje</h2>
+        </div>
+
+        <div class="services-grid">
+          {services.map((service) => (
+            <article class="service-card">
+              <p class="subtitle">{service.subtitle}</p>
+              <h3>{service.title}</h3>
+              <p class="description">{service.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container closing-inner">
+        <p class="eyebrow">Experiencias Mendoza</p>
+        <h2 class="section-title">Primero elegís la casa. Después, si querés, armamos el resto.</h2>
+        <p class="section-copy">
+          Una base cómoda para alojarte y una red de opciones para hacer la estadía más simple, más rica y más disfrutable.
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      Mendoza, Argentina · Casas de alquiler temporario
+      Mendoza, Argentina · Casas de alquiler temporario y servicios complementarios
     </div>
   </footer>
 </BaseLayout>
@@ -120,45 +199,67 @@ const houses = [
   }
 
   .hero {
-    padding: 64px 0 28px;
+    padding: 72px 0 34px;
+  }
+
+  .hero-inner {
+    max-width: 920px;
   }
 
   .eyebrow {
     margin: 0 0 12px;
     color: var(--olive);
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     font-size: 12px;
   }
 
   h1 {
     margin: 0;
-    max-width: 14ch;
-    font-size: clamp(36px, 6vw, 64px);
-    line-height: 0.95;
+    max-width: 12ch;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 0.94;
     letter-spacing: -0.05em;
   }
 
   .lead {
-    margin: 18px 0 0;
+    margin: 20px 0 0;
     max-width: 70ch;
     color: var(--muted);
     line-height: 1.75;
     font-size: 17px;
   }
 
-  .houses {
-    padding: 16px 0 64px;
+  .section-head {
+    margin-bottom: 28px;
   }
 
-  .grid {
+  .section-title {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .section-copy {
+    margin: 0;
+    max-width: 72ch;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .houses {
+    padding: 18px 0 34px;
+  }
+
+  .houses-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
   }
 
-  .card {
+  .house-card {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius-xl);
@@ -167,7 +268,7 @@ const houses = [
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .card:hover {
+  .house-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 24px 56px rgba(35, 29, 22, 0.14);
   }
@@ -187,7 +288,7 @@ const houses = [
     transition: transform 0.4s ease;
   }
 
-  .card:hover .image-wrap img {
+  .house-card:hover .image-wrap img {
     transform: scale(1.03);
   }
 
@@ -216,7 +317,7 @@ const houses = [
     font-size: 13px;
   }
 
-  h2 {
+  h3 {
     margin: 0 0 10px;
     font-size: clamp(24px, 3vw, 32px);
     line-height: 1;
@@ -224,7 +325,7 @@ const houses = [
   }
 
   .description {
-    margin: 0 0 16px;
+    margin: 0;
     color: var(--muted);
     line-height: 1.75;
   }
@@ -233,7 +334,7 @@ const houses = [
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 20px;
+    margin: 18px 0 20px;
   }
 
   .feature-pill {
@@ -263,15 +364,116 @@ const houses = [
     transform: translateY(-1px);
   }
 
+  .bridge {
+    padding: 24px 0 18px;
+  }
+
+  .bridge-inner {
+    padding: 28px 32px;
+    background: rgba(255, 255, 255, 0.52);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius-xl) - 6px);
+  }
+
+  .bridge-kicker {
+    margin: 0 0 8px;
+    color: var(--olive);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .bridge h2 {
+    margin: 0 0 10px;
+    font-size: clamp(26px, 4vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .bridge p:last-child {
+    margin: 0;
+    max-width: 72ch;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .services {
+    padding: 22px 0 56px;
+  }
+
+  .services-head {
+    margin-bottom: 22px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(109, 117, 82, 0.28);
+  }
+
+  .service-card h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  .closing {
+    padding: 0 0 32px;
+  }
+
+  .closing-inner {
+    text-align: center;
+    padding: 34px 20px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .closing .section-copy {
+    margin: 0 auto;
+  }
+
   .footer {
     padding: 10px 0 42px;
     color: var(--muted);
     font-size: 14px;
   }
 
-  @media (max-width: 900px) {
-    .grid {
+  @media (max-width: 980px) {
+    .houses-grid,
+    .services-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 56px;
+    }
+
+    .content,
+    .bridge-inner,
+    .service-card {
+      padding: 20px;
+    }
+
+    .lead,
+    .section-copy,
+    .description,
+    .bridge p:last-child {
+      font-size: 15px;
+      line-height: 1.7;
     }
   }
 </style>
