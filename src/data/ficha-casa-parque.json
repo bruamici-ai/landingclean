@@ -1,0 +1,485 @@
+{
+  "slug": "ficha-casa-parque",
+  "nombre": "La Casa Frente al Parque",
+  "subtitulo": "Ficha interna normalizada de servicios, normas y penalizaciones",
+  "direccion": "Av. Boulogne Sur Mer 1317, Mendoza",
+  "capacidad_publicada": {
+    "huespedes": 14,
+    "observacion": "Se toma capacidad 14 como valor normalizado. En la captura de normas aparece '1414', claramente un error de plataforma."
+  },
+  "checkin_checkout": {
+    "check_in": "15:00",
+    "check_out": "10:00",
+    "observacion": "Se normaliza con el bloque de 'Horas de check-in y check-out'. Los horarios 23:00 y 09:00 del bloque superior parecen metadatos inconsistentes."
+  },
+  "mascotas": {
+    "permitidas": true,
+    "requiere_autorizacion_previa": true,
+    "observacion": "La captura permite mascotas, pero con reglamento específico y cargos por incumplimiento."
+  },
+  "notas_de_normalizacion": [
+    "Se preservó el contenido útil y se separaron los metadatos erróneos o sospechosos.",
+    "Se mantuvo un bloque de 'datos dudosos publicados' para no perder trazabilidad.",
+    "Las penalizaciones quedaron expresadas en USD porque así aparecen en las normas cargadas."
+  ],
+  "servicios_por_categoria": [
+    {
+      "categoria": "Destacados de experiencia",
+      "items": [
+        {
+          "nombre": "Pileta privada",
+          "detalle": "Disponible de noviembre a febrero, al aire libre y 24 horas."
+        },
+        {
+          "nombre": "Jacuzzi privado",
+          "detalle": "Para 2 personas, disponible todo el año y 24 horas."
+        },
+        {
+          "nombre": "Parrilla",
+          "detalle": "Con utensilios para asado y zona exterior."
+        },
+        {
+          "nombre": "Patio privado",
+          "detalle": "No está totalmente cercado."
+        },
+        {
+          "nombre": "Zona para comer al aire libre",
+          "detalle": "Mesa para 10 personas."
+        },
+        {
+          "nombre": "Sistema de sonido",
+          "detalle": "Sony home theater con Aux y Bluetooth."
+        },
+        {
+          "nombre": "TV HD con Netflix",
+          "detalle": "Incluido en la vivienda."
+        },
+        {
+          "nombre": "Sala de juegos",
+          "detalle": "Publicada como prestación disponible."
+        },
+        {
+          "nombre": "Lugar para hacer fogatas",
+          "detalle": "Publicado en la plataforma."
+        },
+        {
+          "nombre": "Muebles de exterior",
+          "detalle": "Para uso del patio y la zona de pileta."
+        },
+        {
+          "nombre": "Reposeras",
+          "detalle": "Publicadas como parte del equipamiento exterior."
+        }
+      ]
+    },
+    {
+      "categoria": "Climatización y confort",
+      "items": [
+        {
+          "nombre": "Aire acondicionado",
+          "detalle": "Portátil y sistema split sin conductos."
+        },
+        {
+          "nombre": "Calefacción",
+          "detalle": "Equipamiento para calentar el espacio."
+        },
+        {
+          "nombre": "Chimenea interior",
+          "detalle": "A gas."
+        },
+        {
+          "nombre": "Ventiladores portátiles",
+          "detalle": "Disponibles en la propiedad."
+        },
+        {
+          "nombre": "Agua caliente",
+          "detalle": "Lavatorio y ducha/bañera con agua caliente."
+        },
+        {
+          "nombre": "Bañera",
+          "detalle": "Publicada como amenity disponible."
+        },
+        {
+          "nombre": "Bidé",
+          "detalle": "Publicado como amenity disponible."
+        },
+        {
+          "nombre": "Almohadas y mantas adicionales",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Persianas o cortinas oscuras",
+          "detalle": "Para mejor descanso."
+        },
+        {
+          "nombre": "Espacio para guardar ropa",
+          "detalle": "Armario, placard y vestidor."
+        },
+        {
+          "nombre": "Ropa de cama",
+          "detalle": "Algodón."
+        },
+        {
+          "nombre": "Perchas",
+          "detalle": "Disponibles."
+        }
+      ]
+    },
+    {
+      "categoria": "Cocina y comedor",
+      "items": [
+        {
+          "nombre": "Cocina completa",
+          "detalle": "Incluye heladera, horno y hornalla."
+        },
+        {
+          "nombre": "Heladera",
+          "detalle": "Publicada como prestación disponible."
+        },
+        {
+          "nombre": "Congelador",
+          "detalle": "Publicado como prestación disponible."
+        },
+        {
+          "nombre": "Horno",
+          "detalle": "Publicado, aunque la plataforma mezcla un dato técnico confuso."
+        },
+        {
+          "nombre": "Microondas",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Lavavajillas",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Cafetera",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Café",
+          "detalle": "Publicado como ítem ofrecido."
+        },
+        {
+          "nombre": "Pava eléctrica",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Tostadora",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Bandeja de horno",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Copas de vino",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Mesa de comedor",
+          "detalle": "Para 10 personas."
+        },
+        {
+          "nombre": "Utensilios básicos de cocina",
+          "detalle": "Ollas, sartenes, aceite, sal y pimienta."
+        },
+        {
+          "nombre": "Vajilla y cubiertos",
+          "detalle": "Platos, bowls, tazas, cubiertos y otros utensilios."
+        },
+        {
+          "nombre": "Utensilios para la parrilla",
+          "detalle": "Combustible y utensilios para asado."
+        }
+      ]
+    },
+    {
+      "categoria": "Limpieza y baño",
+      "items": [
+        {
+          "nombre": "Básicos",
+          "detalle": "Toallas, sábanas, jabón y papel higiénico."
+        },
+        {
+          "nombre": "Acondicionador",
+          "detalle": "Plusbelle."
+        },
+        {
+          "nombre": "Shampoo",
+          "detalle": "Plusbelle."
+        },
+        {
+          "nombre": "Gel de ducha",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Productos de limpieza",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Lavarropas",
+          "detalle": "En la vivienda, incluido en la estadía."
+        },
+        {
+          "nombre": "Ténder para ropa",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Plancha",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Secador de pelo",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Lavandería cercana",
+          "detalle": "Publicada como servicio cercano."
+        }
+      ]
+    },
+    {
+      "categoria": "Familia, trabajo y estadías largas",
+      "items": [
+        {
+          "nombre": "Cuna",
+          "detalle": "Estándar, privada, con sábanas incluidas."
+        },
+        {
+          "nombre": "Libros y material de lectura",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Juegos de mesa",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Zona de trabajo",
+          "detalle": "Privada."
+        },
+        {
+          "nombre": "Entrada independiente",
+          "detalle": "Solo disponible para huéspedes."
+        }
+      ]
+    },
+    {
+      "categoria": "Seguridad y acceso",
+      "items": [
+        {
+          "nombre": "Detector de humo",
+          "detalle": "Publicado como instalado."
+        },
+        {
+          "nombre": "Detector de monóxido de carbono",
+          "detalle": "Publicado como instalado."
+        },
+        {
+          "nombre": "Botiquín de primeros auxilios",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Seguros en las ventanas",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Estacionamiento gratis en la propiedad",
+          "detalle": "Hasta 3 espacios."
+        },
+        {
+          "nombre": "Estacionamiento gratis en la calle",
+          "detalle": "Disponible cerca."
+        },
+        {
+          "nombre": "Estacionamiento pago fuera de las instalaciones",
+          "detalle": "Opción adicional en la calle."
+        },
+        {
+          "nombre": "Wifi",
+          "detalle": "Publicado como '96', probablemente velocidad o indicador interno."
+        }
+      ]
+    }
+  ],
+  "servicios_dudosos_publicados": [
+    {
+      "nombre": "Acceso al lago",
+      "motivo": "No es consistente con la propiedad urbana; probablemente es un dato mal cargado o heredado de otra publicación.",
+      "texto_original": "Los huéspedes pueden llegar a un lago por un sendero o un muelle."
+    },
+    {
+      "nombre": "Horno / dato técnico mezclado",
+      "motivo": "El detalle 'Acero inoxidable • Drean • Cama individual' está claramente cruzado o corrupto.",
+      "texto_original": "Horno — Acero inoxidable • Drean • Cama individual."
+    },
+    {
+      "nombre": "Wifi 96",
+      "motivo": "No especifica unidad; podría ser Mbps o un identificador interno.",
+      "texto_original": "Wifi — 96."
+    }
+  ],
+  "normas_normalizadas": [
+    {
+      "titulo": "Ingreso y registro de huéspedes",
+      "reglas": [
+        "Solo pueden ingresar huéspedes registrados en la reserva.",
+        "Las visitas deben ser avisadas con anticipación y requieren nombre, apellido y foto del DNI o pasaporte.",
+        "Si no se puede coordinar el ingreso de visitas o invitados, puede aplicarse un cargo de hasta 1000 USD."
+      ]
+    },
+    {
+      "titulo": "Convivencia y respeto al entorno",
+      "reglas": [
+        "Se debe mantener un ambiente tranquilo y evitar ruidos fuertes.",
+        "No se permiten eventos que molesten a vecinos.",
+        "Ante incumplimientos por ruidos o eventos, puede aplicarse un cargo de 500 USD."
+      ]
+    },
+    {
+      "titulo": "Limpieza básica obligatoria del huésped",
+      "reglas": [
+        "Los platos, sartenes y utensilios usados deben dejarse limpios.",
+        "La parrilla debe quedar limpia luego de su uso.",
+        "Si el alojamiento queda extremadamente sucio o con basura/alimentos en lugares inusuales, se cobra limpieza adicional."
+      ]
+    },
+    {
+      "titulo": "Cuidado del equipamiento y blancos",
+      "reglas": [
+        "Cualquier daño debe ser informado de inmediato.",
+        "Las toallas con manchas difíciles pueden generar cargo por lavandería especial o reposición.",
+        "Se pide no comer sobre las camas para evitar manchas o daños."
+      ]
+    },
+    {
+      "titulo": "Humo, olores y cocina",
+      "reglas": [
+        "No se permite fumar en interiores; solo en áreas exteriores.",
+        "Se pide no cocinar pescado ni hacer frituras por los olores persistentes."
+      ]
+    },
+    {
+      "titulo": "Uso responsable de energía",
+      "reglas": [
+        "Al salir, deben apagarse luces, calefacción y aire acondicionado."
+      ]
+    },
+    {
+      "titulo": "Sustancias ilegales",
+      "reglas": [
+        "El uso, posesión o almacenamiento de sustancias ilegales está estrictamente prohibido.",
+        "Su incumplimiento puede generar cargos de hasta 1000 USD y notificación a las autoridades."
+      ]
+    },
+    {
+      "titulo": "Llaves y seguridad",
+      "reglas": [
+        "La pérdida de llaves genera cargo por reemplazo."
+      ]
+    },
+    {
+      "titulo": "Mascotas",
+      "reglas": [
+        "Se aceptan mascotas únicamente con autorización y registro previo.",
+        "No se aceptan mascotas menores de un año y medio.",
+        "No deben subirse a camas, sofás ni sillas.",
+        "No deben usar toallas, sábanas, colchones, almohadas, platos ni utensilios de cocina.",
+        "La orina y las heces deben ser limpiadas por el huésped.",
+        "No se debe dejar a la mascota sola y sin supervisión dentro de la propiedad.",
+        "Todo daño causado por la mascota corre por cuenta del huésped."
+      ]
+    }
+  ],
+  "penalizaciones": [
+    {
+      "motivo": "Invitados o personas no registradas sin coordinación previa",
+      "cargo_usd": "hasta 1000",
+      "tipo": "por invitado"
+    },
+    {
+      "motivo": "Platos, sartenes y utensilios sin lavar",
+      "cargo_usd": "50",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Parrilla sucia",
+      "cargo_usd": "50",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Daños o roturas",
+      "cargo_usd": "a costo real",
+      "tipo": "según reposición o reparación"
+    },
+    {
+      "motivo": "Toallas con manchas difíciles",
+      "cargo_usd": "90 o reposición",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Ruidos molestos o eventos",
+      "cargo_usd": "500",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Sustancias ilegales",
+      "cargo_usd": "hasta 1000",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Fumar dentro del alojamiento",
+      "cargo_usd": "50",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Comer sobre las camas y generar daño",
+      "cargo_usd": "50",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Limpieza extra por suciedad excesiva",
+      "cargo_usd": "variable",
+      "tipo": "según estado"
+    },
+    {
+      "motivo": "Pérdida de llaves",
+      "cargo_usd": "100",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Mascota no autorizada",
+      "cargo_usd": "100",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Mascota en camas, sofás o sillas",
+      "cargo_usd": "50",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Mascota usando ropa blanca o utensilios",
+      "cargo_usd": "50",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Orina o heces de mascota sin limpiar",
+      "cargo_usd": "100",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Mascota dejada sola sin supervisión",
+      "cargo_usd": "100",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Daños causados por mascota",
+      "cargo_usd": "a costo real",
+      "tipo": "según reparación o reposición"
+    }
+  ],
+  "fuentes": {
+    "servicios": "servicios.txt",
+    "normas": "Normas-de-la-casa-parque.txt"
+  }
+}

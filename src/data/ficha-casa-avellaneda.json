@@ -1,0 +1,112 @@
+{
+  "slug": "ficha-casa-avellaneda",
+  "nombre": "Casa Avellaneda",
+  "subtitulo": "Ficha interna normalizada de servicios, normas y penalizaciones",
+  "direccion": "Nicol\u00e1s Avellaneda 40, Mendoza",
+  "capacidad_publicada": {
+    "huespedes": 10,
+    "observacion": "Consistente entre Airbnb y Booking."
+  },
+  "checkin_checkout": {
+    "check_in": "15:00",
+    "check_out": "10:00",
+    "observacion": "Unificado entre plataformas."
+  },
+  "mascotas": {
+    "permitidas": true,
+    "requiere_autorizacion_previa": true,
+    "observacion": "Permitidas bajo petici\u00f3n con posibles cargos."
+  },
+  "servicios_por_categoria": [
+    {
+      "categoria": "Experiencia",
+      "items": [
+        {
+          "nombre": "Piscina",
+          "detalle": "Peque\u00f1a, tipo fuente, ideal para ni\u00f1os."
+        },
+        {
+          "nombre": "Parrilla",
+          "detalle": "Exterior con espacio de uso."
+        },
+        {
+          "nombre": "Patio y jard\u00edn",
+          "detalle": "Privado."
+        }
+      ]
+    },
+    {
+      "categoria": "Confort",
+      "items": [
+        {
+          "nombre": "Aire acondicionado",
+          "detalle": "En habitaciones."
+        },
+        {
+          "nombre": "Calefacci\u00f3n central",
+          "detalle": "Adecuada para invierno."
+        },
+        {
+          "nombre": "Chimenea",
+          "detalle": "Interior."
+        }
+      ]
+    },
+    {
+      "categoria": "Cocina",
+      "items": [
+        {
+          "nombre": "Cocina completa",
+          "detalle": "Heladera, horno, microondas."
+        },
+        {
+          "nombre": "Cafetera",
+          "detalle": "Filtro."
+        },
+        {
+          "nombre": "Utensilios",
+          "detalle": "Ollas, sartenes, vajilla completa."
+        }
+      ]
+    }
+  ],
+  "normas_normalizadas": [
+    {
+      "titulo": "Ingreso",
+      "reglas": [
+        "Solo hu\u00e9spedes registrados",
+        "Check-in desde 15:00",
+        "Check-out antes de 10:00"
+      ]
+    },
+    {
+      "titulo": "Convivencia",
+      "reglas": [
+        "No fiestas",
+        "Respetar horarios de silencio 23:00\u201307:00",
+        "No fumar en interiores"
+      ]
+    }
+  ],
+  "penalizaciones": [
+    {
+      "motivo": "Suciedad excesiva",
+      "cargo_usd": "variable",
+      "tipo": "seg\u00fan estado"
+    },
+    {
+      "motivo": "Fumar en interior",
+      "cargo_usd": "50",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Da\u00f1os",
+      "cargo_usd": "a costo real",
+      "tipo": "seg\u00fan reparaci\u00f3n"
+    }
+  ],
+  "fuentes": {
+    "servicios": "airbnb + booking",
+    "normas": "airbnb + booking"
+  }
+}

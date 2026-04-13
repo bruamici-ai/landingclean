@@ -1,0 +1,59 @@
+---
+import ficha from '../../data/ficha-casa-avellaneda.json';
+const totalServicios = ficha.servicios_por_categoria.reduce((a,c)=>a+c.items.length,0);
+---
+
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>{ficha.nombre}</title>
+<style>
+body{font-family:Arial;padding:40px;background:#f5f1ea}
+.card{background:#fff;padding:20px;margin-bottom:20px;border-radius:12px}
+</style>
+</head>
+
+<body>
+
+<h1>{ficha.nombre}</h1>
+<p>{ficha.subtitulo}</p>
+
+<div class="card">
+<h2>Datos</h2>
+<p>{ficha.direccion}</p>
+<p>{ficha.capacidad_publicada.huespedes} huéspedes</p>
+</div>
+
+<div class="card">
+<h2>Servicios ({totalServicios})</h2>
+{ficha.servicios_por_categoria.map(cat=>(
+  <div>
+    <h3>{cat.categoria}</h3>
+    <ul>
+    {cat.items.map(i=><li>{i.nombre} - {i.detalle}</li>)}
+    </ul>
+  </div>
+))}
+</div>
+
+<div class="card">
+<h2>Normas</h2>
+{ficha.normas_normalizadas.map(n=>(
+  <div>
+    <h3>{n.titulo}</h3>
+    <ul>
+    {n.reglas.map(r=><li>{r}</li>)}
+    </ul>
+  </div>
+))}
+</div>
+
+<div class="card">
+<h2>Penalizaciones</h2>
+{ficha.penalizaciones.map(p=>(
+  <p>{p.motivo} - {p.cargo_usd} USD</p>
+))}
+</div>
+
+</body>
+</html>
