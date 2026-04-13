@@ -1,112 +1,503 @@
 {
-  "slug": "ficha-casa-avellaneda",
   "nombre": "Casa Avellaneda",
   "subtitulo": "Ficha interna normalizada de servicios, normas y penalizaciones",
-  "direccion": "Nicol\u00e1s Avellaneda 40, Mendoza",
+  "direccion": "Nicolás Avellaneda 40, Mendoza",
   "capacidad_publicada": {
     "huespedes": 10,
-    "observacion": "Consistente entre Airbnb y Booking."
+    "observacion": "Se normaliza capacidad máxima en 10 huéspedes porque coincide entre Airbnb, Booking y la descripción operativa de la propiedad."
   },
   "checkin_checkout": {
     "check_in": "15:00",
     "check_out": "10:00",
-    "observacion": "Unificado entre plataformas."
+    "observacion": "Se consolida check-in 15:00 y check-out 10:00. Booking muestra ventana de entrada hasta 20:00 y salida desde 08:00, pero la ficha operativa usa la referencia principal 15:00 / 10:00."
   },
   "mascotas": {
     "permitidas": true,
-    "requiere_autorizacion_previa": true,
-    "observacion": "Permitidas bajo petici\u00f3n con posibles cargos."
+    "observacion": "Se admiten bajo petición, con autorización previa, registro y posibles suplementos."
   },
   "servicios_por_categoria": [
     {
-      "categoria": "Experiencia",
+      "categoria": "Baño y bienestar",
       "items": [
         {
-          "nombre": "Piscina",
-          "detalle": "Peque\u00f1a, tipo fuente, ideal para ni\u00f1os."
+          "nombre": "Tina",
+          "detalle": "Disponible en la vivienda."
         },
         {
-          "nombre": "Parrilla",
-          "detalle": "Exterior con espacio de uso."
+          "nombre": "Champú y jabón corporal",
+          "detalle": "Incluidos."
         },
         {
-          "nombre": "Patio y jard\u00edn",
-          "detalle": "Privado."
+          "nombre": "Bidé",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Ducha / bañera",
+          "detalle": "Con agua caliente."
+        },
+        {
+          "nombre": "Ducha exterior",
+          "detalle": "Publicada en Airbnb."
+        },
+        {
+          "nombre": "Papel higiénico y toallas",
+          "detalle": "Incluidos para la estadía."
         }
       ]
     },
     {
-      "categoria": "Confort",
+      "categoria": "Dormitorios y guardado",
+      "items": [
+        {
+          "nombre": "Ropa de cama",
+          "detalle": "Incluida."
+        },
+        {
+          "nombre": "Armario y vestidor",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Espacio para guardar ropa",
+          "detalle": "Armario y tocador."
+        },
+        {
+          "nombre": "Perchero",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Suelo de madera o parquet",
+          "detalle": "Presente en dormitorios."
+        }
+      ]
+    },
+    {
+      "categoria": "Climatización y confort",
       "items": [
         {
           "nombre": "Aire acondicionado",
-          "detalle": "En habitaciones."
+          "detalle": "Publicado en Airbnb y Booking."
         },
         {
-          "nombre": "Calefacci\u00f3n central",
-          "detalle": "Adecuada para invierno."
+          "nombre": "Calefacción central",
+          "detalle": "Disponible, destacada por huéspedes."
         },
         {
-          "nombre": "Chimenea",
-          "detalle": "Interior."
+          "nombre": "Chimenea interior",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Ventiladores portátiles",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Habitaciones insonorizadas",
+          "detalle": "Publicadas en Booking."
         }
       ]
     },
     {
-      "categoria": "Cocina",
+      "categoria": "Entretenimiento y conectividad",
+      "items": [
+        {
+          "nombre": "TV",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Sistema de sonido",
+          "detalle": "Con entrada auxiliar."
+        },
+        {
+          "nombre": "Radio",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Wifi",
+          "detalle": "Gratis en todo el establecimiento."
+        }
+      ]
+    },
+    {
+      "categoria": "Cocina y comedor",
       "items": [
         {
           "nombre": "Cocina completa",
-          "detalle": "Heladera, horno, microondas."
+          "detalle": "Los huéspedes pueden cocinar en este espacio."
         },
         {
-          "nombre": "Cafetera",
-          "detalle": "Filtro."
+          "nombre": "Refrigerador / nevera",
+          "detalle": "Disponible."
         },
         {
-          "nombre": "Utensilios",
-          "detalle": "Ollas, sartenes, vajilla completa."
+          "nombre": "Microondas",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Utensilios básicos para cocinar",
+          "detalle": "Ollas, sartenes, aceite, sal y pimienta."
+        },
+        {
+          "nombre": "Platos, bowls y cubiertos",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Congelador",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Fogones / cocina a gas",
+          "detalle": "Publicados en plataforma."
+        },
+        {
+          "nombre": "Horno",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Hervidor de agua",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Cafetera de filtro",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Tostadora",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Mesa del comedor",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Productos de limpieza",
+          "detalle": "Disponibles."
+        },
+        {
+          "nombre": "Zona de comedor",
+          "detalle": "Disponible."
+        }
+      ]
+    },
+    {
+      "categoria": "Limpieza y lavadero",
+      "items": [
+        {
+          "nombre": "Lavadora",
+          "detalle": "En la vivienda."
+        },
+        {
+          "nombre": "Servicios básicos",
+          "detalle": "Sábanas, jabón y papel higiénico."
+        },
+        {
+          "nombre": "Plancha",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Utensilios de planchado",
+          "detalle": "Disponibles."
+        }
+      ]
+    },
+    {
+      "categoria": "Familia y estadías largas",
+      "items": [
+        {
+          "nombre": "Cuna",
+          "detalle": "Disponible previa solicitud, con sábanas incluidas."
+        },
+        {
+          "nombre": "Entrada independiente",
+          "detalle": "Entrada por otra calle o edificio."
+        },
+        {
+          "nombre": "Se permite dejar equipaje",
+          "detalle": "Sujeto a coordinación."
+        }
+      ]
+    },
+    {
+      "categoria": "Exterior y experiencia",
+      "items": [
+        {
+          "nombre": "Patio trasero privado",
+          "detalle": "Espacio abierto dentro de la propiedad."
+        },
+        {
+          "nombre": "Jardín",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Mobiliario exterior",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Lugar para hacer fogata",
+          "detalle": "Publicado en Airbnb."
+        },
+        {
+          "nombre": "Cocina exterior privada",
+          "detalle": "Publicada en Airbnb."
+        },
+        {
+          "nombre": "Parrilla / barbacoa",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Piscina al aire libre privada",
+          "detalle": "Disponible según temporada."
+        },
+        {
+          "nombre": "Piscina infantil",
+          "detalle": "Publicada en Booking."
+        },
+        {
+          "nombre": "Piscina pequeña",
+          "detalle": "Publicada en Booking."
+        },
+        {
+          "nombre": "Zona poco profunda",
+          "detalle": "Publicada en Booking."
+        },
+        {
+          "nombre": "Vistas al jardín / patio interior",
+          "detalle": "Publicadas en Booking."
+        }
+      ]
+    },
+    {
+      "categoria": "Acceso, seguridad y estacionamiento",
+      "items": [
+        {
+          "nombre": "Estacionamiento gratuito en las instalaciones",
+          "detalle": "Incluido."
+        },
+        {
+          "nombre": "Parking en garaje",
+          "detalle": "Publicado en Booking."
+        },
+        {
+          "nombre": "Llave de acceso",
+          "detalle": "Check-in con acceso coordinado."
+        },
+        {
+          "nombre": "Botiquín de primeros auxilios",
+          "detalle": "Disponible."
+        },
+        {
+          "nombre": "Entrada privada",
+          "detalle": "Publicada en Booking."
+        },
+        {
+          "nombre": "Acceso a pisos superiores por escaleras",
+          "detalle": "Casa de dos plantas."
+        }
+      ]
+    },
+    {
+      "categoria": "Servicios de anfitrión y políticas",
+      "items": [
+        {
+          "nombre": "El anfitrión te va a recibir",
+          "detalle": "Recepción personal cuando es posible."
+        },
+        {
+          "nombre": "Se admiten mascotas",
+          "detalle": "Bajo petición y con suplementos / autorización."
+        },
+        {
+          "nombre": "Animales de asistencia",
+          "detalle": "Sin restricciones."
+        },
+        {
+          "nombre": "Idiomas: español e inglés",
+          "detalle": "Publicados por la anfitriona."
         }
       ]
     }
   ],
   "normas_normalizadas": [
     {
-      "titulo": "Ingreso",
+      "titulo": "Ingreso y registro de huéspedes",
       "reglas": [
-        "Solo hu\u00e9spedes registrados",
-        "Check-in desde 15:00",
-        "Check-out antes de 10:00"
+        "Solo pueden ingresar huéspedes registrados en la reserva.",
+        "Las visitas deben ser avisadas con anticipación y requieren nombre, apellido y foto del DNI o pasaporte.",
+        "Si no se coordina el ingreso de visitas o invitados, puede aplicarse un cargo de hasta 1000 USD por invitado."
       ]
     },
     {
-      "titulo": "Convivencia",
+      "titulo": "Check-in, check-out y llegada",
       "reglas": [
-        "No fiestas",
-        "Respetar horarios de silencio 23:00\u201307:00",
-        "No fumar en interiores"
+        "El check-in es a partir de las 15:00.",
+        "La salida es antes de las 10:00.",
+        "Se debe informar con antelación la hora estimada de llegada.",
+        "Al ingreso se solicita documento de identidad válido con foto; Booking también informa tarjeta de crédito al check-in."
+      ]
+    },
+    {
+      "titulo": "Convivencia y respeto al entorno",
+      "reglas": [
+        "No se permiten fiestas, eventos ni despedidas.",
+        "Se debe mantener un ambiente tranquilo y evitar ruidos fuertes.",
+        "El horario de silencio se consolida de 23:00 a 07:00 como referencia más restrictiva publicada en Booking."
+      ]
+    },
+    {
+      "titulo": "Limpieza básica obligatoria del huésped",
+      "reglas": [
+        "Los platos, sartenes y utensilios usados deben dejarse limpios.",
+        "La parrilla debe quedar limpia luego de su uso.",
+        "Si el alojamiento queda extremadamente sucio o con basura/alimentos en lugares inusuales, se cobra limpieza adicional."
+      ]
+    },
+    {
+      "titulo": "Cuidado del equipamiento y blancos",
+      "reglas": [
+        "Cualquier daño debe ser informado de inmediato.",
+        "Las toallas con manchas difíciles pueden generar cargo por lavandería especial o reposición.",
+        "Se pide no comer sobre las camas para evitar manchas o daños."
+      ]
+    },
+    {
+      "titulo": "Humo, olores y cocina",
+      "reglas": [
+        "No se puede fumar dentro del alojamiento; solo en áreas exteriores.",
+        "No cocinar pescado ni hacer frituras por los olores persistentes."
+      ]
+    },
+    {
+      "titulo": "Uso responsable de energía y llaves",
+      "reglas": [
+        "Al salir, deben apagarse luces, calefacción y aire acondicionado.",
+        "La pérdida de llaves genera cargo por reemplazo."
+      ]
+    },
+    {
+      "titulo": "Sustancias ilegales y depósito",
+      "reglas": [
+        "El uso, posesión o almacenamiento de sustancias ilegales está estrictamente prohibido.",
+        "Su incumplimiento puede generar cargos de hasta 1000 USD y notificación a las autoridades.",
+        "Booking informa un depósito reembolsable por daños de 100 USD al ingreso, sujeto a revisión al check-out."
+      ]
+    },
+    {
+      "titulo": "Mascotas",
+      "reglas": [
+        "Se aceptan mascotas únicamente con autorización y registro previo.",
+        "No se aceptan mascotas menores de un año y medio.",
+        "No deben subirse a camas, sofás ni sillas.",
+        "No deben usar toallas, sábanas, colchones, almohadas, platos ni utensilios de cocina.",
+        "La orina y las heces deben ser limpiadas por el huésped.",
+        "No se debe dejar a la mascota sola y sin supervisión dentro de la propiedad.",
+        "Todo daño causado por la mascota corre por cuenta del huésped."
       ]
     }
   ],
   "penalizaciones": [
     {
-      "motivo": "Suciedad excesiva",
-      "cargo_usd": "variable",
-      "tipo": "seg\u00fan estado"
+      "motivo": "Invitados o personas no registradas sin coordinación previa",
+      "cargo_usd": "hasta 1000",
+      "tipo": "por invitado"
     },
     {
-      "motivo": "Fumar en interior",
+      "motivo": "Platos, sartenes y utensilios sin lavar",
       "cargo_usd": "50",
       "tipo": "por evento"
     },
     {
-      "motivo": "Da\u00f1os",
+      "motivo": "Parrilla sucia",
+      "cargo_usd": "50",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Daños o roturas",
       "cargo_usd": "a costo real",
-      "tipo": "seg\u00fan reparaci\u00f3n"
+      "tipo": "según reposición o reparación"
+    },
+    {
+      "motivo": "Toallas con manchas difíciles",
+      "cargo_usd": "90 o reposición",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Ruidos molestos o eventos",
+      "cargo_usd": "500",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Sustancias ilegales",
+      "cargo_usd": "hasta 1000",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Fumar dentro del alojamiento",
+      "cargo_usd": "50",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Comer sobre las camas y generar daño",
+      "cargo_usd": "50",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Limpieza extra por suciedad excesiva",
+      "cargo_usd": "variable",
+      "tipo": "según estado"
+    },
+    {
+      "motivo": "Pérdida de llaves",
+      "cargo_usd": "100",
+      "tipo": "por evento"
+    },
+    {
+      "motivo": "Mascota no autorizada",
+      "cargo_usd": "100",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Mascota en camas, sofás o sillas",
+      "cargo_usd": "50",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Mascota usando ropa blanca o utensilios",
+      "cargo_usd": "50",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Orina o heces de mascota sin limpiar",
+      "cargo_usd": "100",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Mascota dejada sola sin supervisión",
+      "cargo_usd": "100",
+      "tipo": "por día de infracción"
+    },
+    {
+      "motivo": "Daños causados por mascota",
+      "cargo_usd": "a costo real",
+      "tipo": "según reparación o reposición"
+    }
+  ],
+  "servicios_dudosos_publicados": [
+    {
+      "nombre": "Piscina / pileta publicada",
+      "motivo": "La publicación la muestra como piscina al aire libre privada y el anfitrión la describe como pileta de 5 metros, pero varias reseñas recientes aclaran que en la práctica es una fuente o piscina pequeña, ideal para niños y no para nadar.",
+      "texto_original": "“Piscina al aire libre privada” / “piscina de 5 metros de largo y poca profundidad, ideal para niños”."
+    },
+    {
+      "nombre": "Ducha exterior",
+      "motivo": "Figura como servicio en Airbnb pero no aparece reforzada en Booking ni en las reseñas. Conviene validarla operativamente antes de usarla como argumento comercial.",
+      "texto_original": "“Ducha exterior”."
+    },
+    {
+      "nombre": "Habitaciones insonorizadas",
+      "motivo": "Booking lo publica como atributo, pero por tipología de casa residencial antigua y por comentarios de mantenimiento no conviene asumir aislamiento acústico real sin verificación.",
+      "texto_original": "“Habitaciones insonorizadas / Insonorización”."
     }
   ],
   "fuentes": {
-    "servicios": "airbnb + booking",
-    "normas": "airbnb + booking"
+    "servicios": "servicios-casa-avellaneda.txt",
+    "normas": "normas-casa-avellaneda.txt"
   }
 }
